@@ -1006,7 +1006,12 @@ if check_password():
             price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
             st.write("Predicted Rent Price")
             st.success(np.exp(price).astype(int))
-            st.write(htype)
+            if  htype == 0:
+                st.write('Apartment'
+            elif htype == 1:
+                st.write("House")
+            else:
+                st.write("Townhouse")
             
 
 
