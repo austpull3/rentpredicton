@@ -58,7 +58,7 @@ df.fillna(0, inplace=True)
 df=df[df["price"] > 200 ]
 df=df[df["sqfeet"]>= 200]
 
-df=df[df["price"]<2000]
+df=df[df["price"]<2000] 
 
 df= df[(df["sqfeet"]<= 1600) & (df['sqfeet'] > 300)]
 
