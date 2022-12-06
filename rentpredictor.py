@@ -1006,13 +1006,8 @@ if check_password():
             price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
             st.write("Predicted Rent Price")
             st.success(np.exp(price).astype(int))
-            def pred_report():
-                return []
-    
-        #if st.button("Create Rent Prediction Report"):
-            pred_report().append({"htype": htype, "dogs": dogs, "smoking": smoking, "wheelchair": wheelchair, "electric": electric, "furnished": furnished, "bedbath": bedbath, "laundry": laundry, "parking": parking, "state": state})
-            st.write(pd.DataFrame(pred_report()))
-
+            st.write(htype)
+            
 
 
         st.markdown("## Happy Holidays! 🎄")
