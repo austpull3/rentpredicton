@@ -1,4 +1,34 @@
 import streamlit as st 
+import pandas as pd
+import numpy as np
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns 
+from sklearn import preprocessing
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+import warnings
+warnings.filterwarnings("ignore")
+from sklearn import metrics
+from sklearn.model_selection import cross_val_score 
+from sklearn.model_selection import KFold
+#import statsmodels.formula.api as smf
+#import statsmodels.stats.api as sms
+#import statsmodels.api as sm
+#from statsmodels.formula.api import ols
+from sklearn import datasets, linear_model
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error, make_scorer
+from sklearn.feature_selection import RFE
+from sklearn.linear_model import LinearRegression
+from scipy import stats, linalg
+
+import streamlit as st  
+import os
+import pandas as pd
+import seaborn as sns 
+import matplotlib.pyplot as plt
 def check_password():
     """Returns `True` if the user had the correct password."""
 
@@ -30,36 +60,6 @@ def check_password():
 if check_password():
     st.write("Here goes your normal Streamlit app...")
     st.button("Click me")
-import pandas as pd
-import numpy as np
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-import seaborn as sns 
-from sklearn import preprocessing
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
-import warnings
-warnings.filterwarnings("ignore")
-from sklearn import metrics
-from sklearn.model_selection import cross_val_score 
-from sklearn.model_selection import KFold
-#import statsmodels.formula.api as smf
-#import statsmodels.stats.api as sms
-#import statsmodels.api as sm
-#from statsmodels.formula.api import ols
-from sklearn import datasets, linear_model
-from sklearn.metrics import r2_score
-from sklearn.metrics import mean_squared_error, make_scorer
-from sklearn.feature_selection import RFE
-from sklearn.linear_model import LinearRegression
-from scipy import stats, linalg
-
-import streamlit as st  
-import os
-import pandas as pd
-import seaborn as sns 
-import matplotlib.pyplot as plt
 st.set_page_config(page_icon=":house:", page_title="Rent Prediction")
 
 st.write("Streamlit version", st.__version__)
