@@ -1006,6 +1006,12 @@ if check_password():
             price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
             st.write("Predicted Rent Price")
             st.success(np.exp(price).astype(int))
+            def pred_report():
+                return []
+    
+        #if st.button("Create Rent Prediction Report"):
+            pred_report().append({"htype": htype, "dogs": dogs, "smoking": smoking, "wheelchair": wheelchair, "electric": electric, "furnished": furnished, "bedbath": bedbath, "laundry": laundry, "parking": parking, "state": state})
+            st.write(pd.DataFrame(pred_report()))
 
 
 
@@ -1017,13 +1023,6 @@ if check_password():
             st.sidebar.info("The last factor to select is the bedroom/bathroom total. Think about this number as bedrooms + bathrooms. For example if 4 is selected then that would represent a place with 2 beds and 2 baths.")
             st.sidebar.info("When all of the factors have been selected press the 'Predict Rent Price' button and wait for the predictor to display the predicted rent price based on the input you gave.")
 
-        
-        def pred_report():
-            return []
-    
-        #if st.button("Create Rent Prediction Report"):
-            pred_report().append({"htype": htype, "dogs": dogs, "smoking": smoking, "wheelchair": wheelchair, "electric": electric, "furnished": furnished, "bedbath": bedbath, "laundry": laundry, "parking": parking, "state": state})
-            st.write(pd.DataFrame(pred_report()))
             
     page_names_to_funcs = {
         "Welcome Page": main_page,
