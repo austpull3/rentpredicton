@@ -298,7 +298,7 @@ df.isna().sum()
     
     if st.checkbox("Show Missing Values"):
         from PIL import Image 
-        image9 = Image.open('missingvalues.png')
+        image9 = Image.open('images/missingvalues.png')
         st.image(image9)
     
     code = '''
@@ -312,14 +312,14 @@ df.isna().sum()
         '''
     st.code(code, language= 'python')
     from PIL import Image 
-    image10 = Image.open('missingh.png')
+    image10 = Image.open('images/missingh.png')
     st.image(image10)
     
     st.markdown("## Finding and Handling Outliers")
     
     from PIL import Image 
     #st.sidebar.markdown("# Loading Data")
-    image30 = Image.open('missingimage.png')
+    image30 = Image.open('images/missingimage.png')
     st.sidebar.image(image30)
     
     
@@ -418,11 +418,11 @@ fig.show()
     
     from PIL import Image 
     #st.sidebar.markdown("# Loading Data")
-    image31= Image.open('correlation.png')
+    image31= Image.open('images/correlation.png')
     st.sidebar.image(image31)
     
     from PIL import Image 
-    image19= Image.open('encode.png')
+    image19= Image.open('images/encode.png')
     st.image(image19)
     st.markdown("## Feature Correlation with Target ")
     code = ''' 
@@ -433,7 +433,7 @@ sns.heatmap(hm, annot = True, square = True, cmap = 'flare')
     st.code(code, language= 'python')
     
     
-    image20= Image.open('heatmap.png')
+    image20= Image.open('images/heatmap.png')
     st.image(image20)
     
     code = '''
@@ -443,7 +443,7 @@ corr['price'].sort_values(ascending = False)
              '''
     st.code(code, language= 'python')
     
-    image21= Image.open('corr.png')
+    image21= Image.open('images/corr.png')
     st.image(image21)
     
     
@@ -454,7 +454,7 @@ sns.regplot(data = df, x="sqfeet", y= "price",
 
              '''
     st.code(code, language= 'python')
-    image22= Image.open('regplots.png')
+    image22= Image.open('images/regplots.png')
     st.image(image22)
     code = '''
 sns.regplot(data = df, x="baths", y= "price",
@@ -462,7 +462,7 @@ sns.regplot(data = df, x="baths", y= "price",
 
              '''
     st.code(code, language= 'python')
-    image50= Image.open('regbath.png')
+    image50= Image.open('images/regbath.png')
     st.image(image50)
     code = '''
 sns.regplot(data = df, x="laundry_options", y= "price",
@@ -470,7 +470,7 @@ sns.regplot(data = df, x="laundry_options", y= "price",
 
              '''
     st.code(code, language= 'python')
-    image51= Image.open('regl.png')
+    image51= Image.open('images/regl.png')
     st.image(image51)
 
 def page6():
@@ -478,7 +478,7 @@ def page6():
       
       from PIL import Image 
       #st.sidebar.markdown("# Loading Data")
-      image33 = Image.open('ML.jpeg')
+      image33 = Image.open('images/ML.jpeg')
       st.sidebar.image(image33)
       
       tab, tab2, tab3 = st.tabs(["Model Creation Code", "Validation Code","Results"])
@@ -630,12 +630,12 @@ pred_graph_ran=pd.DataFrame({"True Value":y_train, "Predicted Value":pred2})
 pred_graph_ran.head()
 '''
           st.code(code, language = 'python')
-          image26= Image.open('pred.png')
+          image26= Image.open('images/pred.png')
           st.image(image26)
 
           st.markdown("### Specific Prediction With Input") 
           st.write("Result converted back to original price scale")
-          image27= Image.open('spred.png')
+          image27= Image.open('images/spred.png')
           st.image(image27)
           code = '''
 pp = p2.predict([[0,1,1,0,0,0,4,4,6,4]])
@@ -651,7 +651,7 @@ vif["VIF"] = [variance_inflation_factor(X.values, i)
 vif
 '''
           st.code(code, language = 'python')
-          image35= Image.open('vif.png')
+          image35= Image.open('images/vif.png')
           st.image(image35)
           
           
@@ -669,7 +669,7 @@ plt.show()
 '''
           st.code(code, language = 'python')
            
-          image36= Image.open('asump.png')
+          image36= Image.open('images/asump.png')
           st.image(image36)
           
           
@@ -680,7 +680,7 @@ plt.title("Normal Q-Q plot")
 plt.show()
 '''
           st.code(code, language = 'python')
-          image37= Image.open('asump2.png')
+          image37= Image.open('images/asump2.png')
           st.image(image37)
           
           code = '''
@@ -693,7 +693,7 @@ plt.show()
 '''
           st.code(code, language = 'python')
           
-          image38= Image.open('asump3.png')
+          image38= Image.open('images/asump3.png')
           st.image(image38)
           
           code = '''
@@ -723,11 +723,11 @@ def page7():
         """,
         unsafe_allow_html=True
         )
-    add_bg_from_local('Christmas2.webp')    
+    add_bg_from_local('images/Christmas2.webp')    
     
     from PIL import Image 
     #st.sidebar.markdown("# Loading Data")
-    image32 = Image.open('forrent.jpeg')
+    image32 = Image.open('images/forrent.jpeg')
     st.sidebar.image(image32)
     
     st.header("Please select each of the following factors to discover the rent estimate:")
