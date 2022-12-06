@@ -894,7 +894,7 @@ def page7():
         return prediction
     
     
-    htype = st.selectbox('Select Rent Housing Type ', ['Apartment', 'House', 'Townhouse'])
+    htype = st.selectbox('Select Rent Housing Type ', ['Apartment', 'House', 'Townhouse'],help = 'Select which renting option you are looking for.')
     if  htype == 'Apartment':
         htype = 0
     elif htype == 'House':
@@ -902,33 +902,33 @@ def page7():
     else:
         htype = 2
     
-    dogs = st.selectbox('Dogs Allowed:', ['Yes', 'No'])
+    dogs = st.selectbox('Dogs Allowed:', ['Yes', 'No'], help = 'Select if you are bringing your fury friend or not.')
     if  dogs == 'Yes':
         dogs = 1
     else: dogs = 0
     
-    smoking = st.selectbox('Smoking Allowed:', ['Yes', 'No'])
+    smoking = st.selectbox('Smoking Allowed:', ['Yes', 'No'], help = 'Select if smoking is allowed or not in the renting option.')
     if  smoking == 'No':
         smoking = 0
     else: smoking = 1
     
-    wheelchair = st.selectbox('Wheelchair Access:', ['Yes', 'No'])
+    wheelchair = st.selectbox('Wheelchair Access:', ['Yes', 'No'], help = 'Select if the renting option needs wheelchair access.')
     if  wheelchair == 'No':
         wheelchair = 0
     else: wheelchair = 1
     
-    electric = st.selectbox('Electric Vehicle Charge:', ['Yes', 'No'])
+    electric = st.selectbox('Electric Vehicle Charge:', ['Yes', 'No'], help = "Select if the renting option has charging for electric vehicles.")
     if  electric == 'No':
         electric = 0
     else: electric = 1
     
-    furnished = st.selectbox('Furnished:', ['Yes', 'No'])
+    furnished = st.selectbox('Furnished:', ['Yes', 'No'], help = "Select if the renting option comes furnished.")
     if  furnished == 'No':
         furnished = 0
     else: furnished = 1
         
     
-    laundry = st.selectbox('Select Laundry Option:', ['In Unit', 'On Site', 'W/D Hookup', 'Laundry in Building', 'No Laundry on Site'])
+    laundry = st.selectbox('Select Laundry Option:', ['In Unit', 'On Site', 'W/D Hookup', 'Laundry in Building', 'No Laundry on Site'], help = "Select the Laundry Option you want. 'W/D' = Washer and Dryer.")
     if  laundry == 'Laundry in Building':
         laundry  = 0
     elif laundry  == 'On Site':
@@ -941,7 +941,7 @@ def page7():
         laundry = 4
     
     
-    parking = st.selectbox('Select Parking Option:', ['Attached Garage',  'Carport','Detached Garage', 'Street Parking','Off-Street Parking', 'No Parking'])
+    parking = st.selectbox('Select Parking Option:', ['Attached Garage',  'Carport','Detached Garage', 'Street Parking','Off-Street Parking', 'No Parking'],help = "Select desired parking for rent option.")
     if  parking == 'Attached Garage':
         parking  = 0
     elif parking == 'Carport':
@@ -955,7 +955,7 @@ def page7():
     elif parking == 'Street Parking':
         parking  = 5
         
-    state = st.selectbox('Select a State: ', ['Colorado','Florida', 'Georgia','Iowa','Louisiana','Michigan','North Carolina','New York', 'New Jersey', 'Pennsylvania', 'Tennessee', 'Texas','Virginia'])
+    state = st.selectbox('Select a State: ', ['Colorado','Florida', 'Georgia','Iowa','Louisiana','Michigan','North Carolina','New York', 'New Jersey', 'Pennsylvania', 'Tennessee', 'Texas','Virginia'],help = 'Select a state to rent in. There are 13 choices.')
     if  state == 'Texas':
         state = 40
     elif state == 'Florida':
@@ -983,9 +983,9 @@ def page7():
     elif state == 'Iowa':
         state = 11
     
-    bedbath = st.number_input('Bedroom/Bathroom Total:', min_value=2, max_value=6, value=2, help = 'Add Bedrooms and then Bathrooms, EX: 2 = 1 bed 1 bath')
+    bedbath = st.number_input('Bedroom/Bathroom Total:', min_value=2, max_value=6, value=2, help = 'Bedrooms + Bathrooms: (Example: 4  = 2 beds and 2 baths)')
     
-    if st.button('Predict Rent Price'):
+    if st.button('Predict Rent Price', help = "Predict the Rent Price for the variables selected above."):
         price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
         st.write("Predicted Rent Price")
         st.success(np.exp(price).astype(int))
