@@ -1,4 +1,5 @@
 import streamlit as st 
+st.set_page_config(page_icon=":house:", page_title="Rent Prediction")
 st.markdown("# Enter the password to access the Rent Predictor app.")
 def check_password():
     def password_entered():
@@ -54,9 +55,6 @@ if check_password():
     import pandas as pd
     import seaborn as sns 
     import matplotlib.pyplot as plt
-    #st.set_page_config(page_icon=":house:", page_title="Rent Prediction")
-
-    st.write("Streamlit version", st.__version__)
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     df = pd.read_csv("USAHousing2.csv")
