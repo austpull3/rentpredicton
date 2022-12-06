@@ -1,6 +1,5 @@
 import streamlit as st 
 st.set_page_config(page_icon=":house:", page_title="Rent Prediction")
-st.markdown("# Enter the password to access the Rent Predictor app.")
 def check_password():
     def password_entered():
         if st.session_state["password"] == st.secrets["password"]:
