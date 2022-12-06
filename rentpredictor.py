@@ -92,7 +92,7 @@ def main_page():
     st.markdown("### In the sidebar to the left there are several pages that can take you through the machine learning side of the predictor.")
     st.markdown("### If you wish to go straight to the predictor select that page.")
     from PIL import Image 
-    image1 = Image.open('house3.jpeg')
+    image1 = Image.open('images/house3.jpeg')
     st.image(image1)
 
     st.markdown("# ENJOY!")
