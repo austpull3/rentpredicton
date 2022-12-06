@@ -8,7 +8,7 @@ def check_password():
         else:
             st.session_state["password_correct"] = False
     if "password_correct" not in st.session_state:
-        st.markdown("# Enter the password to access the Rent Predictor app.")
+        st.markdown("# Enter the password to access the Rent Predictor app. 🏘")
         st.text_input(
             "Password", type="password", on_change=password_entered, key="password"
         )
