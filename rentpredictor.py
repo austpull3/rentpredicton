@@ -1018,12 +1018,12 @@ if check_password():
             st.sidebar.info("When all of the factors have been selected press the 'Predict Rent Price' button and wait for the predictor to display the predicted rent price based on the input you gave.")
 
         
-        def predreport():
+        def pred_report():
             return []
     
-        if st.button("Create Rent Prediction Report"):
-            predreport().append({"htype": htype, "dogs": dogs, "smoking": smoking, "wheelchair": wheelchair, "electric": electric, "furnished": furnished, "bedbath": bedbath, "laundry": laundry, "parking": parking, "state": state})
-            st.write(pd.DataFrame(predreport()))
+        #if st.button("Create Rent Prediction Report"):
+            pred_report().append({"htype": htype, "dogs": dogs, "smoking": smoking, "wheelchair": wheelchair, "electric": electric, "furnished": furnished, "bedbath": bedbath, "laundry": laundry, "parking": parking, "state": state})
+            st.write(pd.DataFrame(pred_report()))
     page_names_to_funcs = {
         "Welcome Page": main_page,
         "Loading Data": page2,
