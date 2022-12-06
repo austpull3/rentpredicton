@@ -96,7 +96,11 @@ def main_page():
     st.image(image1)
 
     st.markdown("# ENJOY!")
-    st.sidebar.markdown("# Welcome!🎈❄️")
+    st.sidebar.markdown("# Welcome!❄️")
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help 🔍"):
+        st.sidebar.info("This is the welcome page which describes how to interact with the different pages and the purpose of the Streamlit app.")
+        st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
  
 def page2():
     st.markdown("# Importing Libraries and Loading Data ")
@@ -152,6 +156,15 @@ def page2():
     #st.sidebar.markdown("# Loading Data")
     image28 = Image.open('images/load.png')
     st.sidebar.image(image28)
+    
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help 🔍"):
+        st.sidebar.info("This page displays the necessary libraries to import for the Rent Predictor and how to read in the dataset and get a sample of the data.")
+        st.sidebar.info("Check the checkbox at the bottom of the page to display the number of rows and columns in the dataset.")
+        st.sidebar.markdown("### To continue exploring the Rent Predictor implementation select the next page from the drop down above.")
+    
+    st.markdown("##### If you wish to download the dataset here is the link to it: [USA Housing Listings](https://www.kaggle.com/datasets/austinreese/usa-housing-listings)")
+
 
 def page3():
     st.markdown("# Exploratory Data Analysis") 
@@ -161,7 +174,13 @@ def page3():
     #st.sidebar.markdown("# Loading Data")
     image29 = Image.open('images/eda.webp')
     st.sidebar.image(image29)
-    
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help 🔍"):
+        st.sidebar.info("The first tab allows you to enter and explore different rows in the dataset, show descriptive statistics by selecting the checkbox, and deciding whether to display unique elements and dataframe information by clicking yes or no.")
+        st.sidebar.info("The second tab you can view variable distributions and select different barplots to display rent option frequencies.")
+        st.sidebar.info("The third tab explores more data features and boxplots can be displayed by pressing the button at the bottom of the page")
+        st.sidebar.markdown("### To continue exploring the Rent Predictor implementation select the next page from the drop down above.")
+        
     df = pd.read_csv("USAHousing2.csv")
     
     import random
@@ -390,6 +409,13 @@ st.write(sns.boxplot(x = 'baths', data = df))
 st.pyplot()
          '''
     st.code(code, language= 'python')
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help 🔍"):
+        st.sidebar.info("This page shows how to find and handle missing data and outliers for the Rent Predictor.")
+        st.sidebar.info("Check 'show missing values' to display missing values.")
+        st.sidebar.info("This page also shows variables with outliers and how they would be without correction. Check the 'check to fix the data' box to see the outliers removed.")
+        st.sidebar.markdown("### To continue exploring the Rent Predictor implementation select the next page from the drop down above.")
+        
     
 def page5():
     st.markdown("# Encoding/Correlation Exploration")
@@ -472,6 +498,11 @@ sns.regplot(data = df, x="laundry_options", y= "price",
     st.code(code, language= 'python')
     image51= Image.open('images/regl.png')
     st.image(image51)
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help 🔍"):
+        st.sidebar.info("This page shows the code and plots for encoding and correlation exploration. It can be seen that sqfeet and laundry options were most correlated with Rent Price.")
+        st.sidebar.markdown("### To continue exploring the Rent Predictor implementation select the next page from the drop down above.")
+        
 
 def page6():
       st.markdown("# Model Creation")
@@ -703,6 +734,11 @@ np.round(durbin_watson(reg.resid), decimals = 2)
 '''
           st.code(code, language = 'python')
           st.write("1.94")
+          st.sidebar.markdown(" ")
+          if st.sidebar.checkbox(" Select For Help 🔍"):
+              st.sidebar.info("This page displays the steps and code for executing the Rent Predictor. Select the different tabs at the top of the page to view the model creation code, validation code, and the results of the model.")
+              st.sidebar.markdown("### To continue on, select the next page and run the Rent Predictor.")
+              
           
 def page7():
     
@@ -957,6 +993,13 @@ def page7():
     
         
     st.markdown("## Happy Holidays! 🎄")
+
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help 🔍"):
+        st.sidebar.info("Welcome to the Rent Predictor! In order to get a predicted rent price please select a contributing factor for each of the drop downs shown on the page.")
+        st.sidebar.info("The last factor to select is the bedroom/bathroom total. Think about this number as bedrooms + bathrooms. For example if 4 is selected then that would represent a place with 2 beds and 2 baths.")
+        st.sidebar.info("When all of the factors have been selected press the 'Predict Rent Price' button and wait for the predictor to display the predicted rent price based on the input you gave.")
+    
 
 page_names_to_funcs = {
     "Welcome Page": main_page,
