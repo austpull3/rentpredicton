@@ -24,7 +24,6 @@ def check_password():
         return True
 
 if check_password():
-    st.button("Click me")
     import pandas as pd
     import numpy as np
     import numpy as np
