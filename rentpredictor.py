@@ -1024,6 +1024,16 @@ if check_password():
         #if st.button("Create Rent Prediction Report"):
             pred_report().append({"htype": htype, "dogs": dogs, "smoking": smoking, "wheelchair": wheelchair, "electric": electric, "furnished": furnished, "bedbath": bedbath, "laundry": laundry, "parking": parking, "state": state})
             st.write(pd.DataFrame(pred_report()))
+            
+        def pred_report2():
+            return []
+            
+        def con(price):
+            return price.to_csv(index = False.encode('utf-8')
+                                
+        csv = con(pd.DataFrame(pred_report())
+                  
+        st.download_button("Download", csv, "file.csv", "text/csv", key = "download-csv")
     page_names_to_funcs = {
         "Welcome Page": main_page,
         "Loading Data": page2,
