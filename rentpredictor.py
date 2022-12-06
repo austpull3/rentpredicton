@@ -60,7 +60,7 @@ def check_password():
 if check_password():
     st.write("Here goes your normal Streamlit app...")
     st.button("Click me")
-st.set_page_config(page_icon=":house:", page_title="Rent Prediction")
+#st.set_page_config(page_icon=":house:", page_title="Rent Prediction")
 
 st.write("Streamlit version", st.__version__)
 st.set_option('deprecation.showPyplotGlobalUse', False)
