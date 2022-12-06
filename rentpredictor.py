@@ -768,7 +768,7 @@ def page7():
     import pickle
     
     
-    pickle.dump(p2, open('p2.pkl', 'wb'))
+    pickle.dump(model.py, open('p2.pkl', 'wb'))
     
     pickled_model = pickle.load(open('p2.pkl', 'rb'))
     
