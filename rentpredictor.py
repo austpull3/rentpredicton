@@ -1,4 +1,5 @@
 import streamlit as st 
+st.markdown("# Enter the password to access the Rent Predictor app.")
 def check_password():
     """Returns `True` if the user had the correct password."""
 
