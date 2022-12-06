@@ -242,16 +242,13 @@ def page3():
        st.pyplot()
        
        st.markdown("### Select a Barplot to Display Rent Option Frequencies:")
-       barplots = st.selectbox("           ", ['Parking', 'Laundry', 'Regions', 'State', 'Type'])
+       barplots = st.selectbox("           ", ['Parking', 'Laundry', 'State', 'Type'])
        if barplots == 'Parking':
            st.markdown("### Count of Parking Options:")
            st.bar_chart(df.parking_options.value_counts())
        elif barplots == 'Laundry':
            st.markdown("### Count of Laundry Options:")
            st.bar_chart(df.laundry_options.value_counts())
-       elif barplots == 'Regions':
-           st.markdown("### Top Five Most Common Regions:")
-           st.bar_chart(df.region.value_counts().head())
        elif barplots == 'State':
            st.markdown("### Renting Options by State:")
            st.bar_chart(df.state.value_counts())
