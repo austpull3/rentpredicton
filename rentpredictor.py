@@ -1007,11 +1007,13 @@ if check_password():
             st.write("Predicted Rent Price")
             st.success(np.exp(price).astype(int))
             if  htype == 0:
-                st.write('Apartment')
+                ht = 'Apartment')
             elif htype == 1:
-                st.write("House")
+                ht = "House"
             else:
-                st.write("Townhouse")
+                ht = "Townhouse"
+            results = pd.DataFrame(ht)
+            st.dataframe(results)
             
 
 
