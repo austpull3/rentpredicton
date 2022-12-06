@@ -1007,7 +1007,7 @@ if check_password():
             st.write("Predicted Rent Price")
             st.success(np.exp(price).astype(int))
             if  htype == 0:
-                st.write('Apartment'
+                st.write('Apartment')
             elif htype == 1:
                 st.write("House")
             else:
