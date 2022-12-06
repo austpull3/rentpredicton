@@ -1,18 +1,13 @@
 import streamlit as st 
 st.markdown("# Enter the password to access the Rent Predictor app.")
 def check_password():
-    """Returns `True` if the user had the correct password."""
-
     def password_entered():
-        """Checks whether a password entered by the user is correct."""
         if st.session_state["password"] == st.secrets["password"]:
             st.session_state["password_correct"] = True
-            del st.session_state["password"]  # don't store password
+            del st.session_state["password"]
         else:
             st.session_state["password_correct"] = False
-
     if "password_correct" not in st.session_state:
-        # First run, show input for password.
         st.text_input(
             "Password", type="password", on_change=password_entered, key="password"
         )
@@ -22,14 +17,13 @@ def check_password():
         st.text_input(
             "Password", type="password", on_change=password_entered, key="password"
         )
-        st.error("😕 Password incorrect")
+        st.error("Incorrect Password. Try Again.")
         return False
     else:
         # Password correct.
         return True
 
 if check_password():
-    st.write("Here goes your normal Streamlit app...")
     st.button("Click me")
     import pandas as pd
     import numpy as np
