@@ -1024,7 +1024,7 @@ if check_password():
                 wheel = "No Wheelchair Access"
             else: 
                 wheel = "There is Wheelchair Access"
-              if  electric == 0:
+            if  electric == 0:
                 e = "No Electric Vehicle Charging"
             else: 
                 e = "There is Electric Vehicle Charging"
