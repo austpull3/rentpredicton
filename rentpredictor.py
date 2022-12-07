@@ -1013,7 +1013,7 @@ if check_password():
                 ht = "House"
             else:
                 ht = "Townhouse"
-        st.write(ht)
+            st.write(ht)
             
             
 
