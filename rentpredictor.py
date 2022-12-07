@@ -1016,9 +1016,13 @@ if check_password():
                 d = "Dogs Allowed"
             else: 
                 d = "Dogs Not Allowed"
+            if  smoking == 0:
+                smok = "Smoking Not Allowed"
+            else: 
+                smok = "Smoking Allowed"
             r = pd.DataFrame()
             results = []
-            results.append([ht,d])
+            results.append([ht,d, smok])
             st.write(pd.DataFrame(results))
             
             
