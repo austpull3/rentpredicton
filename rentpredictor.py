@@ -1008,7 +1008,6 @@ if check_password():
             st.success(np.exp(price).astype(int))
             if  htype == 0:
                 ht = 'Apartment'
-                results().append(ht)
             elif htype == 1:
                 ht = "House"
             else:
