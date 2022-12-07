@@ -1016,7 +1016,7 @@ if check_password():
                 ht = "House"
             else:
                 ht = "Townhouse"
-         st.write(pd.DataFrame(results()))
+          st.write(pd.DataFrame(results()))
             
             
 
