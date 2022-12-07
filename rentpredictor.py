@@ -1054,8 +1054,8 @@ if check_password():
                 park = 'Off-Street Parking'
             elif parking == 5:
                 park = 'Street Parking'
-            if  state == 'Texas':
-            state = 40
+            if  state == 40:
+                sta = 'Texas'
             elif state == 9:
                 sta = 'Florida'
             elif state == 25:
