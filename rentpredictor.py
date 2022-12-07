@@ -1024,11 +1024,11 @@ if check_password():
             if  wheelchair == 0:
                 wheel = "No Wheelchair Access"
             else: 
-                wheel = "Wheelchair Access"
+                wheel = "Wheelchair Access Avaliable"
             if  electric == 0:
                 e = "No Electric Vehicle Charging"
             else: 
-                e = "Electric Vehicle Charging"
+                e = "Electric Vehicle Charging Avaliable"
             if  furnished == 0:
                 furn = "Not Furnished"
             else: 
@@ -1095,7 +1095,7 @@ if check_password():
             results = []
             results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb, rentprice])
             r = pd.DataFrame(results)
-            r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair Access', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
+            r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
             st.write(r)
            
             
