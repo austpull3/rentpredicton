@@ -1012,8 +1012,7 @@ if check_password():
                 ht = "House"
             else:
                 ht = "Townhouse"
-            results = pd.DataFrame()
-            results.append(htype)
+            results = pd.DataFrame(data = htype)
             st.dataframe(results)
             
 
