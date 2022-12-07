@@ -1023,14 +1023,28 @@ if check_password():
             if  wheelchair == 0:
                 wheel = "No Wheelchair Access"
             else: 
-                wheel = "There is Wheelchair Access"
+                wheel = "Wheelchair Access"
             if  electric == 0:
                 e = "No Electric Vehicle Charging"
             else: 
-                e = "There is Electric Vehicle Charging"
+                e = "Electric Vehicle Charging"
+            if  furnished == 0:
+                furn = "Not Furnished"
+            else: 
+                furn = "Furnished"
+            if  l == 0:
+                l  = 'Laundry in Building'
+            elif laundry  == 1:
+                l  = 'On Site'
+            elif l  == 2:
+                l  = 'No Laundry on Site'
+            elif l == 3:
+                l  = 'W/D Hookup'
+            elif laundry == 4:
+                l = 'In Unit'
             r = pd.DataFrame()
             results = []
-            results.append([ht,d, smok, wheel, e])
+            results.append([ht,d, smok, wheel, e, furn, l])
             st.write(pd.DataFrame(results))
             
             
