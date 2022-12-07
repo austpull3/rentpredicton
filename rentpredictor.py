@@ -1097,7 +1097,7 @@ if check_password():
             r = pd.DataFrame(results)
             r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
             st.write(r)
-            st.dataframe(r.head()
+            st.dataframe(r.head())
            
             
             
