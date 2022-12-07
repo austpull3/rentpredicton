@@ -1096,6 +1096,7 @@ if check_password():
             results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb, rentprice])
             r = pd.DataFrame(results)
             r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
+            st.markdown("### Rent Prediction Results")
             st.write(r)
             @st.experimental_memo
             def convert_df(r):
@@ -1105,7 +1106,7 @@ if check_password():
             csv = convert_df(r)
 
             st.download_button(
-               "Press to Download Rent Prediction Report as a CSV",
+               "Press to Download Rent Prediction Report",
                csv,
                "Rent Prediction Report.csv",
                "text/csv",
