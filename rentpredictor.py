@@ -1105,9 +1105,9 @@ if check_password():
             csv = convert_df(r)
 
             st.download_button(
-               "Press to Download",
+               "Press to Download Rent Prediction Report as a CSV",
                csv,
-               "file.csv",
+               "Rent Prediction Report.csv",
                "text/csv",
                key='download-csv'
             )
