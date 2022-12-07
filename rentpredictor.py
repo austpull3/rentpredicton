@@ -1001,9 +1001,6 @@ if check_password():
             state = 11
 
         bedbath = st.number_input('Bedroom/Bathroom Total:', min_value=2, max_value=6, value=2, help = 'Bedrooms + Bathrooms: (Example: 4  = 2 beds and 2 baths)')
-        
-        def results():
-            return []
             
         if st.button('Predict Rent Price', help = "Predict the Rent Price for the variables selected above."):
             price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
@@ -1016,7 +1013,7 @@ if check_password():
                 ht = "House"
             else:
                 ht = "Townhouse"
-        st.write(pd.DataFrame(results()))
+        st.write(ht)
             
             
 
