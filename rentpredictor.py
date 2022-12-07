@@ -1015,9 +1015,8 @@ if check_password():
             st.write(ht)
             def results():
                 return []
-            if st.button("ADD"):
                 results().append(ht)
-            st.write(pd.DataFrame(results()))
+                st.write(pd.DataFrame(results()))
             
             
 
