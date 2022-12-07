@@ -1006,6 +1006,7 @@ if check_password():
             price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
             st.write("Predicted Rent Price")
             st.success(np.exp(price).astype(int))
+            rentprice = np.exp(price).astype(int)
             if  htype == 0:
                 ht = 'Apartment'
             elif htype == 1:
@@ -1092,7 +1093,7 @@ if check_password():
                 bb = "3 Bed, 3 Bath"
             r = pd.DataFrame()
             results = []
-            results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb, price])
+            results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb, rentprice])
             st.write(pd.DataFrame(results))
             
             
