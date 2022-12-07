@@ -1092,7 +1092,7 @@ if check_password():
                 bb = "3 Bed, 3 Bath"
             r = pd.DataFrame()
             results = []
-            results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb])
+            results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb, price])
             st.write(pd.DataFrame(results))
             
             
