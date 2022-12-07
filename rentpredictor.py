@@ -1018,7 +1018,7 @@ if check_password():
                 d = "Dogs Not Allowed"
             r = pd.DataFrame()
             results = []
-            results.append(ht,d)
+            results.append([ht,d])
             st.write(pd.DataFrame(results))
             
             
