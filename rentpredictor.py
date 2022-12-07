@@ -1032,13 +1032,13 @@ if check_password():
                 furn = "Not Furnished"
             else: 
                 furn = "Furnished"
-            if  l == 0:
+            if  laundry == 0:
                 l  = 'Laundry in Building'
             elif laundry  == 1:
                 l  = 'On Site'
-            elif l  == 2:
+            elif laundry  == 2:
                 l  = 'No Laundry on Site'
-            elif l == 3:
+            elif laundry == 3:
                 l  = 'W/D Hookup'
             elif laundry == 4:
                 l = 'In Unit'
