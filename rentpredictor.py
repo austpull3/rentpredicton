@@ -1013,6 +1013,11 @@ if check_password():
             else:
                 ht = "Townhouse"
             st.write(ht)
+            def results():
+                return []
+            if st.button("ADD"):
+                results().append(ht)
+            st.write(pd.DataFrame(results()))
             
             
 
