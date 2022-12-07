@@ -1020,9 +1020,17 @@ if check_password():
                 smok = "Smoking Not Allowed"
             else: 
                 smok = "Smoking Allowed"
+            if  wheelchair == 0:
+                wheel = "No Wheelchair Access"
+            else: 
+                wheel = "There is Wheelchair Access"
+              if  electric == 0:
+                e = "No Electric Vehicle Charging"
+            else: 
+                e = "There is Electric Vehicle Charging"
             r = pd.DataFrame()
             results = []
-            results.append([ht,d, smok])
+            results.append([ht,d, smok, wheel, e])
             st.write(pd.DataFrame(results))
             
             
