@@ -1098,7 +1098,13 @@ if check_password():
             r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
             st.write(r)
             st.dataframe(r.head())
-           
+            with open("dummy.pdf", "rb") as pdf_file:
+                PDFbyte = pdf_file.read()
+
+            st.download_button(label="Export_Report",
+                                data= r,
+                                file_name="test.pdf",
+                                mime='application/octet-stream')
             
             
 
