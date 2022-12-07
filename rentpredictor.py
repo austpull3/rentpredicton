@@ -1004,7 +1004,7 @@ if check_password():
             
         if st.button('Predict Rent Price', help = "Predict the Rent Price for the variables selected above."):
             price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
-            st.write("Predicted Rent Price")
+            st.markdown("### Predicted Rent Price")
             st.success(np.exp(price).astype(int))
             rentprice = np.exp(price).astype(int)
             if  htype == 0:
