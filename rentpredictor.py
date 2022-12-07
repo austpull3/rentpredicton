@@ -1012,6 +1012,9 @@ if check_password():
                 ht = "House"
             else:
                 ht = "Townhouse"
+            results = []
+            results.append(ht)
+            st.write(results)
             st.write(ht)
             
             
