@@ -1012,9 +1012,13 @@ if check_password():
                 ht = "House"
             else:
                 ht = "Townhouse"
+            if  dogs == 1:
+                d = "Dogs Allowed"
+            else: 
+                d = "Dogs Not Allowed"
             r = pd.DataFrame()
             results = []
-            results.append(ht)
+            results.append(ht,d)
             st.write(pd.DataFrame(results))
             
             
