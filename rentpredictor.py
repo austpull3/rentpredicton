@@ -1017,7 +1017,7 @@ if check_password():
             results.append(ht)
             st.write(results)
             st.write(ht)
-            st.write(r(results))
+            st.write(pd.DataFrame(results))
             
             
 
