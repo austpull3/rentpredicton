@@ -1097,23 +1097,21 @@ if check_password():
             r = pd.DataFrame(results)
             r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
             st.write(r)
-            st.dataframe(r.head())
-            from fpdf import FPDF
+            @st.experimental_memo
+            def convert_df(r):
+               return r.to_csv(index=False).encode('utf-8')
 
-            st.header('PDF generator - test')
-            button1 = st.button('PDF')
 
-            if button1:
-                name = st.text_input('Name', value='')
-                pdf = FPDF('P', 'mm', 'A4')
-                pdf.add_page()
-                pdf.set_font(family='Times', size=16)
-                pdf.cell(40, 50, txt=name)
+            csv = convert_df(r)
 
-                st.download_button('Download PDF',
-                                   data=pdf,
-                                   file_name='pdf_test.pdf'
-                                   )
+            st.download_button(
+               "Press to Download",
+               csv,
+               "file.csv",
+               "text/csv",
+               key='download-csv'
+            )
+
             
             
 
