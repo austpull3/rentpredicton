@@ -1013,7 +1013,7 @@ if check_password():
             else:
                 ht = "Townhouse"
             results = pd.DataFrame()
-            results.append(ht)
+            results.append(htype)
             st.dataframe(results)
             
 
