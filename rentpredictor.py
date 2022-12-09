@@ -130,7 +130,9 @@ if check_password():
         from fpdf import FPDF
         import base64
 
-        report_text = st.text_input("Report Text")
+        report_text = st.selectbox("Pick one.", ["barplot"])
+        if report_text == "barplot":
+            report_text = sns.boxplot(x = 'beds', y = 'price', data = df))
 
 
         export_as_pdf = st.button("Export Report")
