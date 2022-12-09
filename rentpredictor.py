@@ -141,7 +141,7 @@ if check_password():
 
         for col in df1.columns:
                 fig, ax = plt.subplots()
-                ax.plot(df1[col])
+                ax = sns.barplot(x = 'parking_options', y = 'parking_options', data = df1)
                 st.pyplot(fig)
                 figs.append(fig)
 
