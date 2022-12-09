@@ -1129,11 +1129,11 @@ if check_password():
 
     figs = []
     if st.button('Plots'):
-        h = df.hist(color = "green")
+        fig = df.hist(color = "green")
         plt.show()
         st.pyplot()
         pdf = FPDF()
-        figs.append(h)
+        figs.append(fig)
         for fig in figs:
             pdf.add_page()
             with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
