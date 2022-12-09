@@ -293,7 +293,7 @@ if check_password():
 
                figs = []
                fig, ax = plt.subplots(figsize = (8, 4.5))
-               ax = sns.countplot(x = df.parking_options)
+               ax = sns.countplot(x = df.parking_options, palette = "colorblind")
                sns.set(font_scale = .7)
                for p in ax.patches:
                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
@@ -305,7 +305,7 @@ if check_password():
                figs.append(fig)
 
                fig, ax1 = plt.subplots(figsize = (8, 4.5))
-               ax1 = sns.countplot(x = df.laundry_options)
+               ax1 = sns.countplot(x = df.laundry_options, palette = "colorblind")
                for p in ax1.patches:
                     ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax1.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
@@ -316,7 +316,7 @@ if check_password():
                figs.append(fig)
 
                fig, ax2 = plt.subplots(figsize = (8, 4.5))
-               ax2 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index)
+               ax2 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index, palette = "colorblind")
                for p in ax2.patches:
                     ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                plt.title("Top 10 Most Frequent States", fontsize = 14)
@@ -326,7 +326,7 @@ if check_password():
                figs.append(fig)
 
                fig, ax3 = plt.subplots(figsize = (8, 4))
-               ax3 = sns.countplot(x = df.type, order = pd.value_counts(df['type']).iloc[:3].index)
+               ax3 = sns.countplot(x = df.type, order = pd.value_counts(df['type']).iloc[:3].index, palette = "colorblind")
                for p in ax3.patches:
                     ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                #st.pyplot(fig)
