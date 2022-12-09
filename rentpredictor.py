@@ -135,7 +135,7 @@ if check_password():
             return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
         df1 = df.copy()
-        df1 = df1['parking_options']
+        df1 = df1[['parking_options']]
         
         figs = []
 
