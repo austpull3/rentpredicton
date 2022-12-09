@@ -144,8 +144,8 @@ if check_password():
         st.pyplot(fig)
         figs.append(fig)
         
-        fig, ax = plt.subplots()
-        ax = sns.barplot(y = df.price, x = df.beds)
+        fig, ax1 = plt.subplots()
+        ax1 = sns.barplot(y = df.price, x = df.beds)
         plt.xticks(rotation = 90)
         st.pyplot(fig)
         figs.append(fig)
