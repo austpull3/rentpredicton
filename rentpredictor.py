@@ -305,6 +305,7 @@ if check_password():
            for p in ax1.patches:
                 ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
            plt.xticks(rotation = 45)
+           plt.xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
            st.pyplot(fig)
            figs.append(fig)
 
