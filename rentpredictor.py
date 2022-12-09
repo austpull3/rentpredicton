@@ -151,9 +151,9 @@ if check_password():
                         fig.savefig(tmpfile.name)
                         pdf.image(tmpfile.name, 10, 10, 200, 100)
 
-        html = create_download_link(pdf.output(dest="S").encode("latin-1"), "test")
+            html = create_download_link(pdf.output(dest="S").encode("latin-1"), "test")
 
-        st.markdown(html, unsafe_allow_html=True)        
+            st.markdown(html, unsafe_allow_html=True)        
 
 
     def page2():
