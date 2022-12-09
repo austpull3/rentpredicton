@@ -292,15 +292,16 @@ if check_password():
            df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
 
            figs = []
-           fig, ax = plt.subplots()
+           fig, ax = plt.subplots(figsize = (6,5))
            ax = sns.countplot(x = df.parking_options)
            for p in ax.patches:
                 ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
            plt.xticks(rotation = 45)
+           ax.set_xticklabels(['Carport', 'ATCH Garage', 'Det Garage', 'Street', 'None', 'Valet'])
            st.pyplot(fig)
            figs.append(fig)
 
-           fig, ax1 = plt.subplots(figsize = (4,5))
+           fig, ax1 = plt.subplots(figsize = (6,5))
            ax1 = sns.countplot(x = df.laundry_options)
            for p in ax1.patches:
                 ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
