@@ -1129,7 +1129,7 @@ if check_password():
 
     figs = []
     if st.button('Plots'):
-        plt.bar(df['parking_options'].value_counts())
+        st.bar_chart(df.parking_options.value_counts())
         plt.show()
         st.pyplot()
         pdf = FPDF()
