@@ -315,7 +315,7 @@ if check_password():
                ax2 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index)
                for p in ax2.patches:
                     ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-               plt.title("Top 5 Frequent States", fontsize = 14)
+               plt.title("Top 10 Most Frequent States", fontsize = 14)
                #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
                #st.pyplot(fig)
                figs.append(fig)
