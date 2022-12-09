@@ -127,19 +127,7 @@ if check_password():
             st.sidebar.info("This is the welcome page which describes how to interact with the different pages and the purpose of the Streamlit app.")
             st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
 
-				def create_download_link(val, filename):
-									b64 = base64.b64encode(val)  # val looks like b'...'
-									return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
-
-							if export_as_pdf:
-									pdf = FPDF()
-									pdf.add_page()
-									pdf.set_font('Arial', 'B', 16)
-									pdf.cell(st.write("Hello")
-
-									html = create_download_link(pdf.output(dest="S").encode("latin-1"), "test")
-
-									st.markdown(html, unsafe_allow_html=True)            
+        
 
     def page2():
         st.markdown("# Importing Libraries and Loading Data ")
