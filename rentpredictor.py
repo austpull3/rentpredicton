@@ -1129,21 +1129,9 @@ if check_password():
 
     figs = []
     if st.button('Plots'):
-        plt.bar(df.parking_options.value_counts(), df.parking_options)
+        df.parking_options.value_counts().plot(kind = 'bar')
         plt.show()
         st.pyplot()
-        pdf = FPDF()
-        
-        pdf.add_page()
-        with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
-              fig.savefig(tmpfile.name)
-              pdf.image(tmpfile.name, 10, 10, 200, 100)
-        html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
-        st.markdown(html, unsafe_allow_html=True)
-       
-    #export_as_pdf = st.button("Export Report")
-
-    #if export_as_pdf:
      
    
 
