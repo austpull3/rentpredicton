@@ -138,17 +138,10 @@ if check_password():
         df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
         
         figs = []
-
-        for col in df1.columns:
-                fig, ax = plt.subplots()
-                ax = sns.barplot(y = df.price, x = df.parking_options)
-                st.pyplot(fig)
-                figs.append(fig)
-        for col in df1.columns:
-                fig, ax = plt.subplots()
-                ax = sns.barplot(y = df.price, x = df.beds)
-                st.pyplot(fig)
-                figs.append(fig)
+        fig, ax = plt.subplots()
+        ax = sns.barplot(y = df.price, x = df.parking_options)
+        st.pyplot(fig)
+        figs.append(fig)
 
         export_as_pdf = st.button("Export Report")
 
