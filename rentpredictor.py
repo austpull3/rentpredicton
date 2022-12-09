@@ -300,7 +300,7 @@ if check_password():
            st.pyplot(fig)
            figs.append(fig)
 
-           fig, ax1 = plt.subplots()
+           fig, ax1 = plt.subplots(figsize = (10,8))
            ax1 = sns.countplot(x = df.laundry_options)
            for p in ax1.patches:
                 ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
