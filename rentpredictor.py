@@ -296,7 +296,7 @@ if check_password():
            ax = sns.countplot(x = df.parking_options)
            for p in ax.patches:
                 ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           plt.xticks(rotation = 50)
+           plt.xticks(rotation = 60)
            ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
            st.pyplot(fig)
            figs.append(fig)
@@ -305,7 +305,7 @@ if check_password():
            ax1 = sns.countplot(x = df.laundry_options)
            for p in ax1.patches:
                 ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           plt.xticks(rotation = 50)
+           plt.xticks(rotation = 60)
            ax1.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
            st.pyplot(fig)
            figs.append(fig)
@@ -314,6 +314,14 @@ if check_password():
            ax2 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index)
            for p in ax2.patches:
                 ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+           #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
+           st.pyplot(fig)
+           figs.append(fig)
+        
+           fig, ax3 = plt.subplots(figsize = (6,5))
+           ax3 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index)
+           for p in ax3.patches:
+                ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
            #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
            st.pyplot(fig)
            figs.append(fig)
