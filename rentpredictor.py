@@ -126,35 +126,6 @@ if check_password():
         if st.sidebar.checkbox(" Select For Help 🔍"):
             st.sidebar.info("This is the welcome page which describes how to interact with the different pages and the purpose of the Streamlit app.")
             st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
-        
-        from fpdf import FPDF
-        import base64
-        from tempfile import NamedTemporaryFile
-        def create_download_link(val, filename):
-            b64 = base64.b64encode(val)  # val looks like b'...'
-            return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
-
-        df1 = df
-        df1 = df1['parking_options']
-        figs = []
-
-            for col in df1.columns:
-                fig, ax = plt.subplots()
-                ax.plot(df[col])
-                st.pyplot(fig)
-                figs.append(fig)
-
-        export_as_pdf = st.button("Export Report")
-
-        if export_as_pdf:
-            pdf = FPDF()
-            for fig in figs:
-                pdf.add_page()
-                with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
-                        fig.savefig(tmpfile.name)
-                        pdf.image(tmpfile.name, 10, 10, 200, 100)
-            html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
-            st.markdown(html, unsafe_allow_html=True)
 
 
     def page2():
