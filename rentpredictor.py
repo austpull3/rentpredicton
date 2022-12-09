@@ -286,7 +286,7 @@ if check_password():
                from tempfile import NamedTemporaryFile
                def create_download_link(val, filename):
                     b64 = base64.b64encode(val)  # val looks like b'...'
-                    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
+                    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
 
                df1 = df.copy()
                df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
