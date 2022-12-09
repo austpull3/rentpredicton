@@ -298,7 +298,6 @@ if check_password():
                for p in ax.patches:
                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-               plt.xlabel('Parking Options', fontsize = .5)
                #st.pyplot(fig)
                figs.append(fig)
 
@@ -335,7 +334,7 @@ if check_password():
                         with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
                                 fig.savefig(tmpfile.name)
                                 pdf.image(tmpfile.name, 10, 10, 200, 100)
-                    html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
+                    html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Frequency Barplots")
                     st.markdown(html, unsafe_allow_html=True)
 
            st.markdown("### Code for Narrowing Renting Options:")
