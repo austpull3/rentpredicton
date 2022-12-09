@@ -288,37 +288,37 @@ if check_password():
                 b64 = base64.b64encode(val)  # val looks like b'...'
                 return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
-            df1 = df.copy()
-            df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
+           df1 = df.copy()
+           df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
 
-            figs = []
-            fig, ax = plt.subplots()
-            ax = sns.barplot(y = df.price, x = df.parking_options)
-            plt.xticks(rotation = 90)
-            st.pyplot(fig)
-            figs.append(fig)
+           figs = []
+           fig, ax = plt.subplots()
+           ax = sns.barplot(y = df.price, x = df.parking_options)
+           plt.xticks(rotation = 90)
+           st.pyplot(fig)
+           figs.append(fig)
 
-            fig, ax1 = plt.subplots()
-            ax1 = sns.barplot(y = df.price, x = df.beds)
-            plt.xticks(rotation = 90)
-            st.pyplot(fig)
-            figs.append(fig)
+           fig, ax1 = plt.subplots()
+           ax1 = sns.barplot(y = df.price, x = df.beds)
+           plt.xticks(rotation = 90)
+           st.pyplot(fig)
+           figs.append(fig)
 
-            fig, ax2 = plt.subplots()
-            ax2 = sns.barplot(y = df.price, x = df.baths)
-            plt.xticks(rotation = 90)
-            st.pyplot(fig)
-            figs.append(fig)
+           fig, ax2 = plt.subplots()
+           ax2 = sns.barplot(y = df.price, x = df.baths)
+           plt.xticks(rotation = 90)
+           st.pyplot(fig)
+           figs.append(fig)
 
-            fig, ax3 = plt.subplots()
-            ax3 = sns.barplot(y = df.price, x = df.laundry_options)
-            plt.xticks(rotation = 90)
-            st.pyplot(fig)
-            figs.append(fig)
+           fig, ax3 = plt.subplots()
+           ax3 = sns.barplot(y = df.price, x = df.laundry_options)
+           plt.xticks(rotation = 90)
+           st.pyplot(fig)
+           figs.append(fig)
 
-            export_as_pdf = st.button("Export Report")
+           export_as_pdf = st.button("Export Report")
 
-            if export_as_pdf:
+           if export_as_pdf:
                 pdf = FPDF()
                 for fig in figs:
                     pdf.add_page()
