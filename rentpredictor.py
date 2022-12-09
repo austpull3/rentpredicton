@@ -305,7 +305,7 @@ if check_password():
            ax1 = sns.countplot(x = df.laundry_options)
            for p in ax1.patches:
                 ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           plt.xticks(rotation = 45)
+           plt.xticks(rotation = 50)
            ax1.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
            st.pyplot(fig)
            figs.append(fig)
