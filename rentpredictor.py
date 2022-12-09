@@ -1127,7 +1127,6 @@ if check_password():
         b64 = base64.b64encode(val)  # val looks like b'...'
         return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 from matplotlib.backends_pdf import PdfPages
-    figs = []
     if st.button('Plots'):
         st.bar_chart(df.dogs_allowed.value_counts())
         st.pyplot()
