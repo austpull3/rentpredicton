@@ -1138,7 +1138,7 @@ if check_password():
             pdf = FPDF()
             pdf.add_page()
             pdf.set_font('Arial', 'B', 16)
-            pdf.cell(40, 10, f)
+            pdf.cell(st.write("Hello")
 
             html = create_download_link(pdf.output(dest="S").encode("latin-1"), "test")
 
