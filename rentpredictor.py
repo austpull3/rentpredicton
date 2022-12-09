@@ -141,12 +141,12 @@ if check_password():
 
         for col in df1.columns:
                 fig, ax = plt.subplots()
-                ax = sns.barplot(y = df.price, x = 'parking_options)
+                ax = sns.barplot(y = df.price, x = df.parking_options)
                 st.pyplot(fig)
                 figs.append(fig)
         for col in df1.columns:
                 fig, ax = plt.subplots()
-                ax = sns.barplot(y = df.price, x = 'beds')
+                ax = sns.barplot(y = df.price, x = df.beds)
                 st.pyplot(fig)
                 figs.append(fig)
 
