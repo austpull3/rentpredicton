@@ -316,9 +316,8 @@ if check_password():
                for p in ax2.patches:
                     ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                plt.title("Top 10 Most Frequent States", fontsize = 14)
-               #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
                #st.pyplot(fig)
-               plt.tick_params(labelsize = 8)
+               plt.tick_params(labelsize = 11)
                figs.append(fig)
 
                fig, ax3 = plt.subplots(figsize = (8, 4))
@@ -327,7 +326,7 @@ if check_password():
                     ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                #st.pyplot(fig)
                plt.title("Renting Options", fontsize = 14)
-               plt.tick_params(labelsize = 10)
+               plt.tick_params(labelsize = 11)
                figs.append(fig)
 
 
