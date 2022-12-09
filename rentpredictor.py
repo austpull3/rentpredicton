@@ -301,22 +301,13 @@ if check_password():
            figs.append(fig)
 
            fig, ax1 = plt.subplots()
-           ax1 = sns.barplot(y = df.price, x = df.beds)
+           ax1 = sns.countplot(x = 'laundry_options')
+           for p in ax1.patches:
+                ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
            plt.xticks(rotation = 90)
            st.pyplot(fig)
            figs.append(fig)
 
-           fig, ax2 = plt.subplots()
-           ax2 = sns.barplot(y = df.price, x = df.baths)
-           plt.xticks(rotation = 90)
-           st.pyplot(fig)
-           figs.append(fig)
-
-           fig, ax3 = plt.subplots()
-           ax3 = sns.barplot(y = df.price, x = df.laundry_options)
-           plt.xticks(rotation = 90)
-           st.pyplot(fig)
-           figs.append(fig)
 
            export_as_pdf = st.button("Export Report")
 
