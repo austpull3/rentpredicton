@@ -136,13 +136,12 @@ if check_password():
 
 
         figs = []
-        data = df.parking_options.value_counts()
-        for i in range(1):
-            for col in df.columns:
-                fig, ax = plt.subplots()
-                ax.boxplot(df[col])
-                st.pyplot(fig)
-                figs.append(fig)
+        
+        for col in df.columns:
+            fig, ax = plt.subplots()
+            ax.boxplot(df[col])
+            st.pyplot(fig)
+            figs.append(fig)
         
         export_as_pdf = st.button("Export Report")
         if export_as_pdf:
