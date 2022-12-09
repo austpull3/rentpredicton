@@ -325,7 +325,8 @@ if check_password():
            #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
            st.pyplot(fig)
            figs.append(fig)
-
+           
+           text = "Parking Options"
 
            export_as_pdf = st.button("Export Report")
 
@@ -333,6 +334,8 @@ if check_password():
                 pdf = FPDF()
                 for fig in figs:
                     pdf.add_page()
+                    pdf.set_font('Arial', 'B', 16)
+                    pdf.cell(40,10, text)
                     with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
                             fig.savefig(tmpfile.name)
                             pdf.image(tmpfile.name, 10, 10, 200, 100)
