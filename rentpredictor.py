@@ -327,6 +327,7 @@ if check_password():
                #st.pyplot(fig)
                plt.title("Renting Options", fontsize = 16)
                plt.tick_params(labelsize = 12)
+               plt.xlabel(" ")
                figs.append(fig)
 
 
