@@ -134,13 +134,13 @@ if check_password():
             b64 = base64.b64encode(val)  # val looks like b'...'
             return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
-
+        df1 = df
+        df1 = df1['parking_options']
         figs = []
 
-        for i in range(1):
-            for col in df.columns:
+            for col in df1.columns:
                 fig, ax = plt.subplots()
-                ax.plot(df['parking_options'])
+                ax.plot(df[col])
                 st.pyplot(fig)
                 figs.append(fig)
 
