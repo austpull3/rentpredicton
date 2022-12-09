@@ -298,7 +298,7 @@ if check_password():
                for p in ax.patches:
                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-               plt.title("Parking Options")
+               plt.title("Parking Options", fontsize = 12)
                #st.pyplot(fig)
                figs.append(fig)
 
