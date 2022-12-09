@@ -1133,11 +1133,6 @@ if check_password():
         h = df.hist(color = "green")
         plt.show()
         st.pyplot()
-        figs.append(h)
-       
-    export_as_pdf = st.button("Export Report")
-
-    if export_as_pdf:
         pdf = FPDF()
         figs.append(h)
         pdf.add_page()
@@ -1146,6 +1141,11 @@ if check_password():
             pdf.image(tmpfile.name, 10, 10, 200, 100)
         html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
         st.markdown(html, unsafe_allow_html=True)
+       
+    #export_as_pdf = st.button("Export Report")
+
+    #if export_as_pdf:
+     
    
 
         st.markdown("  ")
