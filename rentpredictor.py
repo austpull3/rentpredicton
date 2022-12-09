@@ -149,6 +149,18 @@ if check_password():
         plt.xticks(rotation = 90)
         st.pyplot(fig)
         figs.append(fig)
+        
+        fig, ax2 = plt.subplots()
+        ax2 = sns.barplot(y = df.price, x = df.baths)
+        plt.xticks(rotation = 90)
+        st.pyplot(fig)
+        figs.append(fig)
+        
+        fig, ax3 = plt.subplots()
+        ax3 = sns.barplot(y = df.price, x = df.laundry_options)
+        plt.xticks(rotation = 90)
+        st.pyplot(fig)
+        figs.append(fig)
 
         export_as_pdf = st.button("Export Report")
 
