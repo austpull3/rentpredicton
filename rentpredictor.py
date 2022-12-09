@@ -134,8 +134,9 @@ if check_password():
             b64 = base64.b64encode(val)  # val looks like b'...'
             return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
-        df1 = df
+        df1 = df.copy()
         df1 = df1['parking_options']
+        
         figs = []
 
         for col in df1.columns:
