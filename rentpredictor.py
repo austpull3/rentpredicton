@@ -297,7 +297,7 @@ if check_password():
                for p in ax.patches:
                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-               st.pyplot(fig)
+               #st.pyplot(fig)
                figs.append(fig)
 
                fig, ax1 = plt.subplots(figsize = (8, 4.5))
@@ -305,7 +305,7 @@ if check_password():
                for p in ax1.patches:
                     ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax1.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
-               st.pyplot(fig)
+               #st.pyplot(fig)
                figs.append(fig)
 
                fig, ax2 = plt.subplots(figsize = (8, 4.5))
@@ -313,14 +313,14 @@ if check_password():
                for p in ax2.patches:
                     ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
-               st.pyplot(fig)
+               #st.pyplot(fig)
                figs.append(fig)
 
                fig, ax3 = plt.subplots(figsize = (8, 4))
                ax3 = sns.countplot(x = df.type, order = pd.value_counts(df['type']).iloc[:3].index)
                for p in ax3.patches:
                     ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-               st.pyplot(fig)
+               #st.pyplot(fig)
                figs.append(fig)
 
 
