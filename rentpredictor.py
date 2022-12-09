@@ -132,7 +132,7 @@ if check_password():
 
         report_text = st.selectbox("Pick one.", ["barplot"])
         if report_text == "barplot":
-            report_text = sns.boxplot(x = 'beds', y = 'price', data = df))
+            report_text = sns.boxplot(x = 'beds', y = 'price', data = df)
 
 
         export_as_pdf = st.button("Export Report")
