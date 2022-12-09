@@ -1129,7 +1129,7 @@ if check_password():
 
 
     figs = []
-    if st.button('Plots')
+    if st.button('Plots'):
         fig, ax = plt.subplots()
         ax.plot(df['parking_options'])
         st.pyplot(fig)
