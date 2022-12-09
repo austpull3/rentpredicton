@@ -1127,19 +1127,20 @@ if check_password():
         b64 = base64.b64encode(val)  # val looks like b'...'
         return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
-    fig = []
+    figs = []
     if st.button('Plots'):
         h = df.hist(color = "green")
         plt.show()
         st.pyplot()
         pdf = FPDF()
-        fig.append(h)
-        pdf.add_page()
-        with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
-            fig.savefig(tmpfile.name)
-            pdf.image(tmpfile.name, 10, 10, 200, 100)
-        html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
-        st.markdown(html, unsafe_allow_html=True)
+        figs.append(h)
+        for fig in figs:
+            pdf.add_page()
+            with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
+                fig.savefig(tmpfile.name)
+                pdf.image(tmpfile.name, 10, 10, 200, 100)
+            html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
+            st.markdown(html, unsafe_allow_html=True)
        
     #export_as_pdf = st.button("Export Report")
 
