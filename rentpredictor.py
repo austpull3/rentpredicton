@@ -294,6 +294,7 @@ if check_password():
                figs = []
                fig, ax = plt.subplots(figsize = (8, 4.5))
                ax = sns.countplot(x = df.parking_options)
+               sns.set(font_scale = 2)
                for p in ax.patches:
                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
