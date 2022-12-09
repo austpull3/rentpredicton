@@ -1130,11 +1130,11 @@ if check_password():
 
     figs = []
     if st.button('Plots'):
-        df.hist(color = "green")
+        h = df.hist(color = "green")
         plt.show()
         st.pyplot()
+        fig.append(h)
        
-
     export_as_pdf = st.button("Export Report")
 
     if export_as_pdf:
