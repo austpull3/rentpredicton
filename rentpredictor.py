@@ -298,7 +298,7 @@ if check_password():
                for p in ax.patches:
                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-               plt.title("Parking Options", fontsize = 12)
+               plt.title("Parking Options", fontsize = 14)
                #st.pyplot(fig)
                figs.append(fig)
 
@@ -307,6 +307,7 @@ if check_password():
                for p in ax1.patches:
                     ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                ax1.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
+               plt.title("Laundry Options", fontsize = 14)
                #st.pyplot(fig)
                figs.append(fig)
 
@@ -314,6 +315,7 @@ if check_password():
                ax2 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index)
                for p in ax2.patches:
                     ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+               plt.title("Top 5 Frequent States", fontsize = 14)
                #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
                #st.pyplot(fig)
                figs.append(fig)
@@ -323,6 +325,7 @@ if check_password():
                for p in ax3.patches:
                     ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                #st.pyplot(fig)
+               plt.title("Renting Options", fontsize = 14)
                figs.append(fig)
 
 
