@@ -143,6 +143,12 @@ if check_password():
         plt.xticks(rotation = 90)
         st.pyplot(fig)
         figs.append(fig)
+        
+        fig, ax = plt.subplots()
+        ax = sns.barplot(y = df.price, x = df.beds)
+        plt.xticks(rotation = 90)
+        st.pyplot(fig)
+        figs.append(fig)
 
         export_as_pdf = st.button("Export Report")
 
