@@ -296,7 +296,7 @@ if check_password():
            ax = sns.countplot(x = df.parking_options)
            for p in ax.patches:
                 ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           plt.xticks(rotation = 90)
+           plt.xticks(rotation = 45)
            st.pyplot(fig)
            figs.append(fig)
 
@@ -304,7 +304,7 @@ if check_password():
            ax1 = sns.countplot(x = df.laundry_options)
            for p in ax1.patches:
                 ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           plt.xticks(rotation = 90)
+           plt.xticks(rotation = 45)
            st.pyplot(fig)
            figs.append(fig)
 
