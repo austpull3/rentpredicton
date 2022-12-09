@@ -1131,9 +1131,9 @@ if check_password():
     figs = []
     if st.button('Plots'):
         #fig, ax = plt.subplots()
-        ax = df['parking_options'].value_counts().plot(kind = 'barh')
-        st.pyplot(ax)
-        figs.append(ax)
+        fig = df['parking_options'].value_counts().plot(kind = 'barh')
+        st.pyplot(fig)
+        figs.append(fig)
 
     export_as_pdf = st.button("Export Report")
 
