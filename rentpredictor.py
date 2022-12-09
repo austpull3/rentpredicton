@@ -280,61 +280,61 @@ if check_password():
            elif barplots == 'Type':
                st.markdown("### Count of Different Renting Options:")
                st.bar_chart(df.type.value_counts().head(3))
-            
-           from fpdf import FPDF
-           import base64
-           from tempfile import NamedTemporaryFile
-           def create_download_link(val, filename):
-                b64 = base64.b64encode(val)  # val looks like b'...'
-                return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
+           if st.checkbox(" Select For Downloadable Report of Plots!"):
+               from fpdf import FPDF
+               import base64
+               from tempfile import NamedTemporaryFile
+               def create_download_link(val, filename):
+                    b64 = base64.b64encode(val)  # val looks like b'...'
+                    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
-           df1 = df.copy()
-           df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
+               df1 = df.copy()
+               df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
 
-           figs = []
-           fig, ax = plt.subplots(figsize = (8, 4.5))
-           ax = sns.countplot(x = df.parking_options)
-           for p in ax.patches:
-                ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-           st.pyplot(fig)
-           figs.append(fig)
+               figs = []
+               fig, ax = plt.subplots(figsize = (8, 4.5))
+               ax = sns.countplot(x = df.parking_options)
+               for p in ax.patches:
+                    ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+               ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
+               st.pyplot(fig)
+               figs.append(fig)
 
-           fig, ax1 = plt.subplots(figsize = (8, 4.5))
-           ax1 = sns.countplot(x = df.laundry_options)
-           for p in ax1.patches:
-                ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           ax1.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
-           st.pyplot(fig)
-           figs.append(fig)
-            
-           fig, ax2 = plt.subplots(figsize = (8, 4.5))
-           ax2 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index)
-           for p in ax2.patches:
-                ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
-           st.pyplot(fig)
-           figs.append(fig)
-        
-           fig, ax3 = plt.subplots(figsize = (8, 4))
-           ax3 = sns.countplot(x = df.type, order = pd.value_counts(df['type']).iloc[:3].index)
-           for p in ax3.patches:
-                ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           st.pyplot(fig)
-           figs.append(fig)
-           
+               fig, ax1 = plt.subplots(figsize = (8, 4.5))
+               ax1 = sns.countplot(x = df.laundry_options)
+               for p in ax1.patches:
+                    ax1.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+               ax1.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
+               st.pyplot(fig)
+               figs.append(fig)
 
-           export_as_pdf = st.button("Export Report")
+               fig, ax2 = plt.subplots(figsize = (8, 4.5))
+               ax2 = sns.countplot(x = df.state, order = pd.value_counts(df['state']).iloc[:10].index)
+               for p in ax2.patches:
+                    ax2.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+               #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
+               st.pyplot(fig)
+               figs.append(fig)
 
-           if export_as_pdf:
-                pdf = FPDF()
-                for fig in figs:
-                    pdf.add_page()
-                    with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
-                            fig.savefig(tmpfile.name)
-                            pdf.image(tmpfile.name, 10, 10, 200, 100)
-                html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
-                st.markdown(html, unsafe_allow_html=True)
+               fig, ax3 = plt.subplots(figsize = (8, 4))
+               ax3 = sns.countplot(x = df.type, order = pd.value_counts(df['type']).iloc[:3].index)
+               for p in ax3.patches:
+                    ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+               st.pyplot(fig)
+               figs.append(fig)
+
+
+               export_as_pdf = st.button("Export Report")
+
+               if export_as_pdf:
+                    pdf = FPDF()
+                    for fig in figs:
+                        pdf.add_page()
+                        with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
+                                fig.savefig(tmpfile.name)
+                                pdf.image(tmpfile.name, 10, 10, 200, 100)
+                    html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
+                    st.markdown(html, unsafe_allow_html=True)
 
            st.markdown("### Code for Narrowing Renting Options:")
 
