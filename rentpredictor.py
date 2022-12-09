@@ -1133,7 +1133,7 @@ if check_password():
         h = df.hist(color = "green")
         plt.show()
         st.pyplot()
-        fig.append(h)
+        figs.append(h)
        
     export_as_pdf = st.button("Export Report")
 
