@@ -1114,7 +1114,7 @@ if check_password():
             )
 
             
-            import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt
     from fpdf import FPDF
     import base64
     import numpy as np
