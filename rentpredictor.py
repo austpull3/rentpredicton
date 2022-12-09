@@ -1181,24 +1181,7 @@ if check_password():
                "text/csv",
                key='download-csv'
             )
-
-            
-        import matplotlib.pyplot as plt
-        from fpdf import FPDF
-        import base64
-        import numpy as np
-        from tempfile import NamedTemporaryFile
-
-
-        f = plt.figure()
-        plt.plot(range(10), range(10), "o")
-        plt.show()
-
-        f.savefig("foo.pdf", bbox_inches='tight')
-        export_as_pdf = st.button("Export Report")
      
-   
-
         st.markdown("  ")
         st.markdown("## Happy Holidays! 🎄")
 
