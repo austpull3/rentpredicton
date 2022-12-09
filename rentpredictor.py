@@ -1,4 +1,6 @@
-import streamlit as st 
+import streamlit as st
+import matplotlib as mpl
+mpl.rcParams['agg.path.chunksize'] = 10000
 st.set_page_config(page_icon=":house:", page_title="Rent Prediction")
 def check_password():
     def password_entered():
