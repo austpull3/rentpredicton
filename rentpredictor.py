@@ -1131,7 +1131,7 @@ if check_password():
     figs = []
     if st.button('Plots'):
         #fig, ax = plt.subplots()
-        ax = df['parking_options'].value_counts().plot(kind = 'barh'))
+        ax = df['parking_options'].value_counts().plot(kind = 'barh')
         st.pyplot(ax)
         figs.append(ax)
 
