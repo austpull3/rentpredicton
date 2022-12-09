@@ -319,7 +319,7 @@ if check_password():
            figs.append(fig)
         
            fig, ax3 = plt.subplots(figsize = (6,5))
-           ax3 = sns.countplot(x = df.type)
+           ax3 = sns.countplot(x = df.type, order = pd.value_counts(df['type']).iloc[:3].index)
            for p in ax3.patches:
                 ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
            #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
