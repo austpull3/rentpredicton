@@ -135,7 +135,7 @@ if check_password():
 
         for col in df.columns:
             fig, ax = plt.subplots()
-            ax.plot(df.parking_options.value_counts())
+            ax.plot(df.parking_options.value_counts().head(3))
             st.pyplot(fig)
             figs.append(fig)
         export_as_pdf = st.button("Export Report")
