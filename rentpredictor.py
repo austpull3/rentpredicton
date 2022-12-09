@@ -1129,8 +1129,7 @@ if check_password():
 
     figs = []
     if st.button('Plots'):
-        df.parking_options.value_counts().plot(kind = 'bar')
-        plt.show()
+        st.bar_chart(df.dogs_allowed.value_counts())
         st.pyplot()
      
    
