@@ -318,15 +318,13 @@ if check_password():
            st.pyplot(fig)
            figs.append(fig)
         
-           fig, ax3 = plt.subplots(figsize = (6,5))
+           fig, ax3 = plt.subplots(figsize = (7.50, 3.50))
            ax3 = sns.countplot(x = df.type, order = pd.value_counts(df['type']).iloc[:3].index)
            for p in ax3.patches:
                 ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-           #ax2.set_xticklabels(['In Unit', 'Hookups', 'On Site', 'In BLDG', 'No Laundry'])
            st.pyplot(fig)
            figs.append(fig)
            
-           text = "Parking Options"
 
            export_as_pdf = st.button("Export Report")
 
@@ -334,8 +332,6 @@ if check_password():
                 pdf = FPDF()
                 for fig in figs:
                     pdf.add_page()
-                    pdf.set_font('Arial', 'B', 16)
-                    pdf.cell(40,10, text)
                     with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
                             fig.savefig(tmpfile.name)
                             pdf.image(tmpfile.name, 10, 10, 200, 100)
