@@ -1123,16 +1123,11 @@ if check_password():
     from tempfile import NamedTemporaryFile
 
 
-    def create_download_link(val, filename):
-        b64 = base64.b64encode(val)  # val looks like b'...'
-        return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
-    from matplotlib.backends.backends_pdf import PdfPages
-    if st.button('Plots'):
-        st.bar_chart(df.dogs_allowed.value_counts())
-        st.pyplot()
-    with PdfPages("Images/") as export_pdf:
-        st.bar_chart(df.dogs_allowed.value_counts())
-        export_pdf.savefig()
+    f = plt.figure()
+    plt.plot(range(10), range(10), "o")
+    plt.show()
+
+    f.savefig("foo.pdf", bbox_inches='tight')
         
      
    
