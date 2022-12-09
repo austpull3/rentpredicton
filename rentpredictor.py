@@ -138,7 +138,7 @@ if check_password():
         df1 = df1['parking_options']
         figs = []
 
-            for col in df1.columns:
+        for col in df1.columns:
                 fig, ax = plt.subplots()
                 ax.plot(df[col])
                 st.pyplot(fig)
