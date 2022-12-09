@@ -138,10 +138,11 @@ if check_password():
         figs = []
 
         for col in df.columns:
-            fig, ax = plt.subplots()
-            ax.plot(df['parking_options'])
-            st.pyplot(fig)
-            figs.append(fig)
+            for i in range(1):
+                fig, ax = plt.subplots()
+                ax.plot(df['parking_options'])
+                st.pyplot(fig)
+                figs.append(fig)
 
         export_as_pdf = st.button("Export Report")
 
