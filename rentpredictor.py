@@ -140,7 +140,7 @@ if check_password():
         for i in range(1):
             for col in df.columns:
                 fig, ax = plt.subplots()
-                ax.boxplot(df[col)
+                ax.boxplot(df[col])
                 st.pyplot(fig)
                 figs.append(fig)
         
