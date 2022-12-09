@@ -1116,18 +1116,18 @@ if check_password():
             )
 
             
-    import matplotlib.pyplot as plt
-    from fpdf import FPDF
-    import base64
-    import numpy as np
-    from tempfile import NamedTemporaryFile
+        import matplotlib.pyplot as plt
+        from fpdf import FPDF
+        import base64
+        import numpy as np
+        from tempfile import NamedTemporaryFile
 
 
-    f = plt.figure()
-    plt.plot(range(10), range(10), "o")
-    plt.show()
+        f = plt.figure()
+        plt.plot(range(10), range(10), "o")
+        plt.show()
 
-    f.savefig("foo.pdf", bbox_inches='tight')
+        f.savefig("foo.pdf", bbox_inches='tight')
         
      
    
