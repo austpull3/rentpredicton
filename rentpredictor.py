@@ -293,7 +293,7 @@ if check_password():
 
            figs = []
            fig, ax = plt.subplots()
-           ax = sns.barplot(y = df.price, x = df.parking_options)
+           ax = sns.countplot(x = df.parking_options)
            plt.xticks(rotation = 90)
            st.pyplot(fig)
            figs.append(fig)
