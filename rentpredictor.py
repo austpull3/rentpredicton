@@ -325,8 +325,8 @@ if check_password():
                for p in ax3.patches:
                     ax3.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                #st.pyplot(fig)
-               plt.title("Renting Options", fontsize = 14)
-               plt.tick_params(labelsize = 11)
+               plt.title("Renting Options", fontsize = 16)
+               plt.tick_params(labelsize = 12)
                figs.append(fig)
 
 
