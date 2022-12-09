@@ -129,6 +129,10 @@ if check_password():
         
         from fpdf import FPDF
         import base64
+        def create_download_link(val, filename):
+            b64 = base64.b64encode(val)  # val looks like b'...'
+            return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
+
 
         figs = []
         data = df.parking_options.value_counts()
@@ -137,11 +141,6 @@ if check_password():
             ax.boxplot(data)
             st.pyplot(fig)
             figs.append(fig)
-
-        def create_download_link(val, filename):
-            b64 = base64.b64encode(val)  # val looks like b'...'
-            return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
-
         
         export_as_pdf = st.button("Export Report")
         if export_as_pdf:
