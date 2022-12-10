@@ -202,7 +202,7 @@ if check_password():
         st.sidebar.markdown(" ")
         if st.sidebar.checkbox(" Select For Help 🔍"):
             st.sidebar.info("The first tab allows you to enter and explore different rows in the dataset, show descriptive statistics by selecting the checkbox, and deciding whether to display unique elements and dataframe information by clicking yes or no.")
-            st.sidebar.info("The second tab you can view variable distributions and select different barplots to display rent option frequencies.")
+            st.sidebar.info("The second tab you can view variable distributions and select different barplots to display rent option frequencies. If you would like to download the count plots as a report select the select box and then press the export button.")
             st.sidebar.info("The third tab explores more data features and boxplots can be displayed by pressing the button at the bottom of the page")
             st.sidebar.markdown("### To continue exploring the Rent Predictor implementation select the next page from the drop down above.")
 
