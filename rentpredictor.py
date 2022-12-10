@@ -358,7 +358,7 @@ if check_password():
             '''
            st.code(code, language= 'python')
 
-
+           st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
         with tab3:
             st.markdown("### Dogs Allowed")
             st.bar_chart(df.dogs_allowed.value_counts())
