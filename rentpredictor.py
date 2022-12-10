@@ -1191,7 +1191,7 @@ if check_password():
             st.sidebar.info("Welcome to the Rent Predictor! In order to get a predicted rent price please select a contributing factor for each of the drop downs shown on the page.")
             st.sidebar.info("The last factor to select is the bedroom/bathroom total. Think about this number as bedrooms + bathrooms. For example if 4 is selected then that would represent a place with 2 beds and 2 baths.")
             st.sidebar.info("When all of the factors have been selected press the 'Predict Rent Price' button and wait for the predictor to display the predicted rent price based on the input you gave.")
-
+            st.sidebar.info("If you would like to download your rent prediction as a report then please press the download button.")
             
     page_names_to_funcs = {
         "Welcome Page": main_page,
