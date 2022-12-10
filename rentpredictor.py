@@ -358,7 +358,6 @@ if check_password():
             '''
            st.code(code, language= 'python')
 
-           st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
         with tab3:
             st.markdown("### Dogs Allowed")
             st.bar_chart(df.dogs_allowed.value_counts())
@@ -383,6 +382,8 @@ if check_password():
 
             st.markdown("##### To visually explore more features press the button:")
             if st.button("Display Boxplots"):
+                st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
+                st.pyplot()
                 st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
                 st.pyplot()
                 st.write(sns.boxplot(x = 'laundry_options', y = 'price', data = df))
