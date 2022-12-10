@@ -383,7 +383,7 @@ if check_password():
             st.markdown("##### To visually explore more features press the button:")
             if st.button("Display Boxplots"):
                 st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
-                st.pyplot()
+                #st.pyplot()
                 st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
                 st.pyplot()
                 st.write(sns.boxplot(x = 'laundry_options', y = 'price', data = df))
