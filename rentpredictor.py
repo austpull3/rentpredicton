@@ -289,7 +289,7 @@ if check_password():
                     return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
 
                df1 = df.copy()
-               df1 = df1[['parking_options', 'beds', 'baths', 'laundry_options','price']]
+               df1 = df1[['parking_options', 'laundry_options','price']]
 
                figs = []
                fig, ax = plt.subplots(figsize = (8, 4.5))
