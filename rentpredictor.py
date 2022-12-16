@@ -831,8 +831,9 @@ if check_password():
 
 
     def page7():
-
-        st.markdown("# Welcome to the Rent Predictor🏠🎄❄️")
+        with st.spinner('Loading... Please Wait'):
+            time.sleep(5)
+            st.markdown("# Welcome to the Rent Predictor🏠🎄❄️")
 
         import base64
         def add_bg_from_local(image_file):
@@ -1071,7 +1072,7 @@ if check_password():
             state = 11
 
         bedbath = st.number_input('Bedroom/Bathroom Total:', min_value=2, max_value=6, value=2, help = 'Bedrooms + Bathrooms: (Example: 4  = 2 beds and 2 baths)')
-        with st.spinner("Loading... Please Wait"):
+        with st.spinner('Loading... Please Wait'):
             
             if st.button('Predict Rent Price', help = "Predict the Rent Price for the variables selected above."):
                 price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
