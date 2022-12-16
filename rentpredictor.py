@@ -829,7 +829,7 @@ if check_password():
                   st.sidebar.info("This page displays the steps and code for executing the Rent Predictor. Select the different tabs at the top of the page to view the model creation code, validation code, and the results of the model.")
                   st.sidebar.markdown("### To continue on, select the next page and run the Rent Predictor.")
 
-with st.spinner('Loading... Please Wait', spinner_style = "dots")):
+with st.spinner('Loading... Please Wait', spinner_style = "dots"):
     def page7():
       
         st.markdown("# Welcome to the Rent Predictor🏠🎄❄️")
