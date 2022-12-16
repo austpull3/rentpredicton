@@ -1071,117 +1071,118 @@ if check_password():
             state = 11
 
         bedbath = st.number_input('Bedroom/Bathroom Total:', min_value=2, max_value=6, value=2, help = 'Bedrooms + Bathrooms: (Example: 4  = 2 beds and 2 baths)')
+        with st.spinner("Loading... Please Wait"):
             
-        if st.button('Predict Rent Price', help = "Predict the Rent Price for the variables selected above."):
-            price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
-            st.markdown("### Predicted Rent Price:")
-            st.success(np.exp(price).astype(int))
-            rentprice = np.exp(price).astype(int)
-            if  htype == 0:
-                ht = 'Apartment'
-            elif htype == 1:
-                ht = "House"
-            else:
-                ht = "Townhouse"
-            if  dogs == 1:
-                d = "Dogs Allowed"
-            else: 
-                d = "Dogs Not Allowed"
-            if  smoking == 0:
-                smok = "Smoking Not Allowed"
-            else: 
-                smok = "Smoking Allowed"
-            if  wheelchair == 0:
-                wheel = "No Wheelchair Access"
-            else: 
-                wheel = "Wheelchair Access Avaliable"
-            if  electric == 0:
-                e = "No Electric Vehicle Charging"
-            else: 
-                e = "Electric Vehicle Charging Avaliable"
-            if  furnished == 0:
-                furn = "Not Furnished"
-            else: 
-                furn = "Furnished"
-            if  laundry == 0:
-                l  = 'Laundry in Building'
-            elif laundry  == 1:
-                l  = 'On Site'
-            elif laundry  == 2:
-                l  = 'No Laundry on Site'
-            elif laundry == 3:
-                l  = 'W/D Hookup'
-            elif laundry == 4:
-                l = 'In Unit'
-            if  parking == 0:
-                park  = 'Attached Garage'
-            elif parking == 1:
-                park =  'Carport'
-            elif parking  == 2:
-                park = 'Detached Garage'
-            elif parking  == 3:
-                park  = 'No Parking'
-            elif parking  == 4:
-                park = 'Off-Street Parking'
-            elif parking == 5:
-                park = 'Street Parking'
-            if  state == 40:
-                sta = 'Texas'
-            elif state == 9:
-                sta = 'Florida'
-            elif state == 25:
-                sta = 'North Carolina'
-            elif state == 5:
-                sta = 'Colorado'
-            elif state == 29:
-                sta = 'New Jersey'
-            elif state == 31:
-                 sta = 'New York'
-            elif state == 35:
-                sta = 'Pennsylvania'
-            elif state == 16:
-                sta = 'Louisiana'
-            elif state == 20:
-                sta = 'Michigan'
-            elif state == 42:
-                sta = 'Virginia'
-            elif state == 10:
-                sta = 'Georgia'
-            elif state == 39:
-                sta = 'Tennessee'
-            elif state == 11:
-                sta = 'Iowa'
-            if bedbath == 2:
-                bb = "1 Bed, 1 Bath"
-            if bedbath == 3:
-                bb = "2 Bed, 1 Bath"
-            if bedbath == 4:
-                bb = "2 Bed, 2 Bath"
-            if bedbath == 5:
-                bb = "3 Bed, 2 Bath"
-            if bedbath == 6:
-                bb = "3 Bed, 3 Bath"
-            r = pd.DataFrame()
-            results = []
-            results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb, rentprice])
-            r = pd.DataFrame(results)
-            r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
-            st.markdown("### Rent Prediction Results")
-            st.write(r)
-            @st.experimental_memo
-            def convert_df(r):
-               return r.to_csv(index=False).encode('utf-8')
+            if st.button('Predict Rent Price', help = "Predict the Rent Price for the variables selected above."):
+                price = predict(htype, dogs, smoking, wheelchair, electric, furnished, bedbath, laundry, parking, state)
+                st.markdown("### Predicted Rent Price:")
+                st.success(np.exp(price).astype(int))
+                rentprice = np.exp(price).astype(int)
+                if  htype == 0:
+                    ht = 'Apartment'
+                elif htype == 1:
+                    ht = "House"
+                else:
+                    ht = "Townhouse"
+                if  dogs == 1:
+                    d = "Dogs Allowed"
+                else: 
+                    d = "Dogs Not Allowed"
+                if  smoking == 0:
+                    smok = "Smoking Not Allowed"
+                else: 
+                    smok = "Smoking Allowed"
+                if  wheelchair == 0:
+                    wheel = "No Wheelchair Access"
+                else: 
+                    wheel = "Wheelchair Access Avaliable"
+                if  electric == 0:
+                    e = "No Electric Vehicle Charging"
+                else: 
+                    e = "Electric Vehicle Charging Avaliable"
+                if  furnished == 0:
+                    furn = "Not Furnished"
+                else: 
+                    furn = "Furnished"
+                if  laundry == 0:
+                    l  = 'Laundry in Building'
+                elif laundry  == 1:
+                    l  = 'On Site'
+                elif laundry  == 2:
+                    l  = 'No Laundry on Site'
+                elif laundry == 3:
+                    l  = 'W/D Hookup'
+                elif laundry == 4:
+                    l = 'In Unit'
+                if  parking == 0:
+                    park  = 'Attached Garage'
+                elif parking == 1:
+                    park =  'Carport'
+                elif parking  == 2:
+                    park = 'Detached Garage'
+                elif parking  == 3:
+                    park  = 'No Parking'
+                elif parking  == 4:
+                    park = 'Off-Street Parking'
+                elif parking == 5:
+                    park = 'Street Parking'
+                if  state == 40:
+                    sta = 'Texas'
+                elif state == 9:
+                    sta = 'Florida'
+                elif state == 25:
+                    sta = 'North Carolina'
+                elif state == 5:
+                    sta = 'Colorado'
+                elif state == 29:
+                    sta = 'New Jersey'
+                elif state == 31:
+                     sta = 'New York'
+                elif state == 35:
+                    sta = 'Pennsylvania'
+                elif state == 16:
+                    sta = 'Louisiana'
+                elif state == 20:
+                    sta = 'Michigan'
+                elif state == 42:
+                    sta = 'Virginia'
+                elif state == 10:
+                    sta = 'Georgia'
+                elif state == 39:
+                    sta = 'Tennessee'
+                elif state == 11:
+                    sta = 'Iowa'
+                if bedbath == 2:
+                    bb = "1 Bed, 1 Bath"
+                if bedbath == 3:
+                    bb = "2 Bed, 1 Bath"
+                if bedbath == 4:
+                    bb = "2 Bed, 2 Bath"
+                if bedbath == 5:
+                    bb = "3 Bed, 2 Bath"
+                if bedbath == 6:
+                    bb = "3 Bed, 3 Bath"
+                r = pd.DataFrame()
+                results = []
+                results.append([ht,d, smok, wheel, e, furn, l, park, sta, bb, rentprice])
+                r = pd.DataFrame(results)
+                r.columns = ['Rent Type', 'Dogs', 'Smoking', 'Wheelchair', 'Electric Vehicle Charging', 'Furnished', 'Laundry', 'Parking', 'State', 'Bedroom/Bathroom', 'Predicted Rent Price']
+                st.markdown("### Rent Prediction Results")
+                st.write(r)
+                @st.experimental_memo
+                def convert_df(r):
+                   return r.to_csv(index=False).encode('utf-8')
 
 
-            csv = convert_df(r)
+                csv = convert_df(r)
 
-            st.download_button(
-               "Press to Download Rent Prediction Report",
-               csv,
-               "Rent Prediction Report.csv",
-               "text/csv",
-               key='download-csv'
-            )
+                st.download_button(
+                   "Press to Download Rent Prediction Report",
+                   csv,
+                   "Rent Prediction Report.csv",
+                   "text/csv",
+                   key='download-csv'
+                )
      
         st.markdown("  ")
         st.markdown("## Happy Holidays! 🎄")
