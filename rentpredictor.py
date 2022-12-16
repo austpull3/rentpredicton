@@ -829,10 +829,10 @@ if check_password():
                   st.sidebar.info("This page displays the steps and code for executing the Rent Predictor. Select the different tabs at the top of the page to view the model creation code, validation code, and the results of the model.")
                   st.sidebar.markdown("### To continue on, select the next page and run the Rent Predictor.")
 
-
+with st.spinner('Loading... Please Wait'):
     def page7():
-        with st.spinner('Loading... Please Wait'):
-            st.markdown("# Welcome to the Rent Predictor🏠🎄❄️")
+      
+        st.markdown("# Welcome to the Rent Predictor🏠🎄❄️")
 
         import base64
         def add_bg_from_local(image_file):
