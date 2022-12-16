@@ -832,7 +832,6 @@ if check_password():
 
     def page7():
         with st.spinner('Loading... Please Wait'):
-            time.sleep(5)
             st.markdown("# Welcome to the Rent Predictor🏠🎄❄️")
 
         import base64
