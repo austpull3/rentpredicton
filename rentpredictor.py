@@ -263,6 +263,7 @@ if check_password():
                     )
                 stats = df.describe()
                 if st.button("Download Descriptive Statistics"):
+                    import base64
                     csv_string = stats.to_csv(index = False)
                     b64 = base64.b64encode(csv_string.encode()).decode()
                     
