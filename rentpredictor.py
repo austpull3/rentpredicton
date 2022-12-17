@@ -248,7 +248,7 @@ if check_password():
             # Show dataset description
             if st.checkbox("Show description of dataset"):
                 st.write(df.describe())
-                des = df.describe()
+                des = st.write(df.describe())
                 @st.experimental_memo
                 def convert_df(des):
                     return des.to_csv(index=False).encode('utf-8')
