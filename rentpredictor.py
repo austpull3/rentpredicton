@@ -258,7 +258,7 @@ if check_password():
                     csv,
                     "Dataset Exploration Head",
                     "text/csv",
-                    key='download-csv'
+                    key='downloaddes-csv'
                     )
 
             from PIL import Image 
