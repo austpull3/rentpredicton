@@ -434,12 +434,12 @@ if check_password():
             if export_as_pdf:
                 pdf = FPDF()
                 for fig in figs2:
-                         pdf.add_page()
-                         with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
-                                 fig.savefig(tmpfile.name)
-                                 pdf.image(tmpfile.name, 10, 10, 200, 100)
-                     html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Boxplots")
-                     st.markdown(html, unsafe_allow_html=True)
+                    pdf.add_page()
+                    with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
+                             fig.savefig(tmpfile.name)
+                             pdf.image(tmpfile.name, 10, 10, 200, 100)
+                 html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Boxplots")
+                 st.markdown(html, unsafe_allow_html=True)
                 
             
             st.markdown("##### To visually explore more features press the button:")
