@@ -226,18 +226,14 @@ if check_password():
                     rows = st.number_input("", min_value = 1, value = 5)
                     if rows > 0:
                         st.dataframe(df.head(rows))
-                        userdf = df.head(rows)
-                        @st.experimental_memo
-                        def convert_df(userdf):
-                            return userdf.to_csv(index=False).encode('utf-8')
-                        csv = convert_df(userdf)
-                        st.download_button(
-                                   "Download the rows you selected above.",
-                                   csv,
-                                   "Dataset Exploration Head",
-                                   "text/csv",
-                                   key='download-csv'
-                                )
+                        head = df.head(rows)
+                        if st.button("Download Head Rows"):
+                            import base64
+                            csv_string1 = head.to_csv(index = True)
+                            b64 = base64.b64encode(csv_string1.encode()).decode()
+
+                            href = f'<a href="data:file/csv;base64,{b64}" download="Head Rows of Dataset.csv">Download CSV file</a>'
+                            st.markdown(href, unsafe_allow_html = True)
 
             st.markdown("##### Explore the tail end of the dataset")
             #st.experimental_show(df.tail())
@@ -247,8 +243,8 @@ if check_password():
                 tail = df.tail(tailrows)
                 if st.button("Download Tail Rows"):
                     import base64
-                    csv_string1 = tail.to_csv(index = True)
-                    b64 = base64.b64encode(csv_string1.encode()).decode()
+                    csv_string2 = tail.to_csv(index = True)
+                    b64 = base64.b64encode(csv_string2.encode()).decode()
                     
                     href = f'<a href="data:file/csv;base64,{b64}" download="Tail Rows of Dataset.csv">Download CSV file</a>'
                     st.markdown(href, unsafe_allow_html = True)
@@ -260,8 +256,8 @@ if check_password():
                 stats = df.describe()
                 if st.button("Download Descriptive Statistics"):
                     import base64
-                    csv_string = stats.to_csv(index = True)
-                    b64 = base64.b64encode(csv_string.encode()).decode()
+                    csv_string3 = stats.to_csv(index = True)
+                    b64 = base64.b64encode(csv_string3.encode()).decode()
                     
                     href = f'<a href="data:file/csv;base64,{b64}" download="Descriptive Statistics.csv">Download CSV file</a>'
                     st.markdown(href, unsafe_allow_html = True)
