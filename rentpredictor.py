@@ -421,39 +421,39 @@ if check_password():
                 st.write(sns.boxplot(x = 'baths', y = 'price', data = df))
                 st.pyplot()
                 
-               from fpdf import FPDF
-               import base64
-               from tempfile import NamedTemporaryFile 
-               def create_download_link(val, filename):
-                    b64 = base64.b64encode(val)  # val looks like b'...'
-                    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
+                from fpdf import FPDF
+                import base64
+                from tempfile import NamedTemporaryFile 
+                def create_download_link(val, filename):
+                     b64 = base64.b64encode(val)  # val looks like b'...'
+                     return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
 
       
-               figs2 = []
-               fig, ax = plt.subplots(figsize = (8, 4.5))
-               ax = sns.boxplott(x = 'smoking_allowed', y = 'price', data = df, palette = "colorblind")
-               sns.set(font_scale = .7)
-               for p in ax.patches:
-                    ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-               #ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-               plt.title("Parking Options", fontsize = 16)
-               plt.tick_params(labelsize = 10)
-               #st.pyplot(fig)
-               plt.xlabel(" ")
-               figs2.append(fig)
+                figs2 = []
+                fig, ax = plt.subplots(figsize = (8, 4.5))
+                ax = sns.boxplott(x = 'smoking_allowed', y = 'price', data = df, palette = "colorblind")
+                sns.set(font_scale = .7)
+                for p in ax.patches:
+                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+                #ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
+                plt.title("Parking Options", fontsize = 16)
+                plt.tick_params(labelsize = 10)
+                #st.pyplot(fig)
+                plt.xlabel(" ")
+                figs2.append(fig)
 
  
-               export_as_pdf = st.button("Export Boxplots")
+                export_as_pdf = st.button("Export Boxplots")
 
-               if export_as_pdf:
-                    pdf = FPDF()
-                    for fig in figs2:
-                        pdf.add_page()
-                        with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
-                                fig.savefig(tmpfile.name)
-                                pdf.image(tmpfile.name, 10, 10, 200, 100)
-                    html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Boxplots")
-                    st.markdown(html, unsafe_allow_html=True)
+                if export_as_pdf:
+                     pdf = FPDF()
+                     for fig in figs2:
+                         pdf.add_page()
+                         with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
+                                 fig.savefig(tmpfile.name)
+                                 pdf.image(tmpfile.name, 10, 10, 200, 100)
+                     html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Boxplots")
+                     st.markdown(html, unsafe_allow_html=True)
 
 
 
