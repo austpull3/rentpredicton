@@ -226,7 +226,7 @@ if check_password():
                     rows = st.number_input("", min_value = 1, value = 5)
                     if rows > 0:
                         st.dataframe(df.head(rows))
-                        st.write(df.head(row))
+                        st.write(df.head(rows))
                         
              
             st.markdown("##### Explore the tail end of the dataset")
