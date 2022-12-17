@@ -431,7 +431,7 @@ if check_password():
       
                 figs2 = []
                 fig, ax = plt.subplots(figsize = (8, 4.5))
-                ax = sns.boxplott(x = 'smoking_allowed', y = 'price', data = df, palette = "colorblind")
+                ax = sns.boxplot(x = 'smoking_allowed', y = 'price', data = df, palette = "colorblind")
                 sns.set(font_scale = .7)
                 for p in ax.patches:
                      ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
