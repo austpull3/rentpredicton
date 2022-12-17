@@ -264,7 +264,7 @@ if check_password():
                 stats = df.describe()
                 if st.button("Download Descriptive Statistics"):
                     import base64
-                    csv_string = stats.to_csv(index = False)
+                    csv_string = stats.to_csv(index = True)
                     b64 = base64.b64encode(csv_string.encode()).decode()
                     
                     href = f'<a href="data:file/csv;base64,{b64}" download="stats.csv">Download CSV file</a>'
