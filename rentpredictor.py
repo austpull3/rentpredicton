@@ -259,12 +259,20 @@ if check_password():
             else:
                 st.write("You selected No.")
             
-        import requests
-        import io 
-        url = "https://rentprediction-austpull3.streamlit.app/"
+        import pypdf2
+        df2 =  pd.read_csv("USAHousing2.csv")
+        stats = df2.describe()
+        pdf_file = pypdf2.PdfFileWriter()
         
-        with open("page.pdf", "wb") as f:
-            f.write(response.content)
+        df_pdf = df2.to_pdf()
+        stats_pdf = stats.to_pdf()
+        
+        pdf_file.addPage(df_pdf)
+        pdf_file.addPage(stats_pdf)
+        
+        with open('output.pdf', 'wb') as f:
+            pdf_file.write(f)
+
 
         with tab2:
 
