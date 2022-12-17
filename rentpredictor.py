@@ -227,7 +227,8 @@ if check_password():
                     if rows > 0:
                         st.dataframe(df.head(rows))
                         st.write(df.head(rows))
-                        st.write(type(df.head(rows)))
+                        userdf = df.head(rows)
+                        st.write(userdf)
                         
              
             st.markdown("##### Explore the tail end of the dataset")
