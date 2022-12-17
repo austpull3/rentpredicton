@@ -263,7 +263,11 @@ if check_password():
                     )
                 stats = df.describe()
                 if st.button("Download Descriptive Statistics"):
-                    stats.to_csv('describestats.csv', index = False)
+                    csv_string = stats.to_csv(index = False)
+                    b64 = base64.b64encode(csv_string.encode()).decide()
+                    
+                    href = f'<a href="data:file/csv;base64,{b64}" download="stats.csv">Download CSV file</a>'
+                    st.markdown(href, unsafe_allow_html = True)
 
             from PIL import Image 
 
