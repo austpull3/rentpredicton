@@ -244,30 +244,26 @@ if check_password():
             tailrows = st.number_input(" ", min_value = 1, value = 5)
             if tailrows > 0:
                 st.dataframe(df.tail(tailrows))
+                tail = df.tail(tailrows)
+                if st.button("Download Tail Rows"):
+                    import base64
+                    csv_string1 = tail.to_csv(index = True)
+                    b64 = base64.b64encode(csv_string1.encode()).decode()
+                    
+                    href = f'<a href="data:file/csv;base64,{b64}" download="Tail Rows of Dataset.csv">Download CSV file</a>'
+                    st.markdown(href, unsafe_allow_html = True)
+                    
             st.markdown("##### Descriptive Statistics")
             # Show dataset description
             if st.checkbox("Show description of dataset"):
                 st.write(df.describe())
-                des = df.describe()
-                st.write(type(des))
-                @st.experimental_memo
-                def convert_df(des):
-                    return des.to_csv(index=False).encode('utf-8')
-                csv = convert_df(des)
-                st.download_button(
-                    "Download the rows you selected above.",
-                    csv,
-                    "Dataset Exploration Head",
-                    "text/csv",
-                    key='downloaddes-csv'
-                    )
                 stats = df.describe()
                 if st.button("Download Descriptive Statistics"):
                     import base64
                     csv_string = stats.to_csv(index = True)
                     b64 = base64.b64encode(csv_string.encode()).decode()
                     
-                    href = f'<a href="data:file/csv;base64,{b64}" download="stats.csv">Download CSV file</a>'
+                    href = f'<a href="data:file/csv;base64,{b64}" download="Descriptive Statistics.csv">Download CSV file</a>'
                     st.markdown(href, unsafe_allow_html = True)
 
             from PIL import Image 
