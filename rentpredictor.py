@@ -259,7 +259,12 @@ if check_password():
             else:
                 st.write("You selected No.")
             
-      
+        import requests
+        import io 
+        url = "https://rentprediction-austpull3.streamlit.app/"
+        
+        with open("page.pdf", "wb") as f:
+            f.write(response.content)
 
         with tab2:
 
