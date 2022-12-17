@@ -260,11 +260,11 @@ if check_password():
                 st.write("You selected No.")
             
         from fpdf import FPDF
-               import base64
-               from tempfile import NamedTemporaryFile 
-               def create_download_link(val, filename):
-                    b64 = base64.b64encode(val)  # val looks like b'...'
-                    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
+        import base64
+        from tempfile import NamedTemporaryFile 
+        def create_download_link(val, filename):
+            b64 = base64.b64encode(val)  # val looks like b'...'
+            return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
 
 
         with tab2:
