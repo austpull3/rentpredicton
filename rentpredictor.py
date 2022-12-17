@@ -261,7 +261,7 @@ if check_password():
             st.write(df.head(rows))
             button_text = "Download PDF"
             download_link = f'<a href="javascript:window.print()" class="button -primary">{button_text}</a>'
-            st.markdown(download_link, unsafe_allow_html=False)
+            st.markdown(download_link, unsafe_allow_html= True)
                 
 
         with tab2:
