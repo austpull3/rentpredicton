@@ -422,12 +422,12 @@ if check_password():
             sns.set(font_scale = .7)
             for p in ax.patches:
                 ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-                #ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-                plt.title("Parking Options", fontsize = 16)
-                plt.tick_params(labelsize = 10)
-                #st.pyplot(fig)
-                plt.xlabel(" ")
-                figs2.append(fig)
+            #ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
+            plt.title("Parking Options", fontsize = 16)
+            plt.tick_params(labelsize = 10)
+            #st.pyplot(fig)
+            plt.xlabel(" ")
+            figs2.append(fig)
 
  
             export_as_pdf = st.button("Export Boxplots")
@@ -438,8 +438,8 @@ if check_password():
                     with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
                              fig.savefig(tmpfile.name)
                              pdf.image(tmpfile.name, 10, 10, 200, 100)
-                 html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Boxplots")
-                 st.markdown(html, unsafe_allow_html=True)
+                html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Boxplots")
+                st.markdown(html, unsafe_allow_html=True)
                 
             
             st.markdown("##### To visually explore more features press the button:")
