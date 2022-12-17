@@ -262,7 +262,7 @@ if check_password():
         import PyPDF2
         df2 =  pd.read_csv("USAHousing2.csv")
         stats = df2.describe()
-        pdf_file = pypdf2.PdfFileWriter()
+        pdf_file = PyPDF2.PdfFileWriter()
         
         df_pdf = df2.to_pdf()
         stats_pdf = stats.to_pdf()
