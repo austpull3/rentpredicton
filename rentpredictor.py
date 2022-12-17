@@ -257,13 +257,12 @@ if check_password():
                 st.text(s)
             else:
                 st.write("You selected No.")
-            if st.button('Save as PDF'):
-                with st.spinner('Saving...'):
-                    fig_pdf = st.build_download_link(rows, 'Download PDF', 'Download')
-                    df_pdf = st.build_download_link(tailrows, 'Download PDF', 'Download')
-                    st.write(fig_pdf + df_pdf, 'sample', format = 'pdf')
-                    
-
+            
+            st.write(df.head(rows))
+            button_text = "Download PDF"
+            download_link = f'<a href="javascript:window.print()" class="button -primary">{button_text}</a>'
+            st.markdown(download_link, unsafe_allow_html=True)
+                
 
         with tab2:
 
