@@ -226,18 +226,15 @@ if check_password():
                     rows = st.number_input("", min_value = 1, value = 5)
                     if rows > 0:
                         st.dataframe(df.head(rows))
-                        st.write(df.head(rows))
-                        userdf = df.head(rows)
-                        st.markdown("# here")
                         st.write(userdf)
                         @st.experimental_memo
                         def convert_df(userdf):
                             return userdf.to_csv(index=False).encode('utf-8')
                         csv = convert_df(userdf)
                         st.download_button(
-                                   "Download the rows you selected",
+                                   "Download the rows you selected above.",
                                    csv,
-                                   "Dataset exploration",
+                                   "Dataset Exploration Head",
                                    "text/csv",
                                    key='download-csv'
                                 )
