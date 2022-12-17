@@ -257,7 +257,7 @@ if check_password():
                 st.text(s)
             else:
                 st.write("You selected No.")
-            if st.buttion('Save as PDF'):
+            if st.button('Save as PDF'):
                 with st.spinner('Saving...'):
                     fig_pdf = st.build_download_link(rows, 'Download PDF', 'Download')
                     df_pdf = st.build_download_link(tailrows, 'Download PDF', 'Download')
