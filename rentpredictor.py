@@ -227,21 +227,7 @@ if check_password():
                     if rows > 0:
                         head = st.dataframe(df.head(rows))
                         st.write(head)
-                        @st.experimental_memo
-                        def convert_df(head):
-                            return head.to_csv(index=False).encode('utf-8')
-
-
-                        csv = convert_df(head)
-
-                        st.download_button(
-                           "Download rows",
-                           csv,
-                           "Head of data.csv",
-                           "text/csv",
-                           key='download-csv'
-                        )
-
+             
             st.markdown("##### Explore the tail end of the dataset")
             #st.experimental_show(df.tail())
             tailrows = st.number_input(" ", min_value = 1, value = 5)
