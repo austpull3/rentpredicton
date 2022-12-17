@@ -239,8 +239,6 @@ if check_password():
                                    key='download-csv'
                                 )
 
-                        
-             
             st.markdown("##### Explore the tail end of the dataset")
             #st.experimental_show(df.tail())
             tailrows = st.number_input(" ", min_value = 1, value = 5)
@@ -250,6 +248,19 @@ if check_password():
             # Show dataset description
             if st.checkbox("Show description of dataset"):
                 st.write(df.describe())
+                des = df.describe())
+                @st.experimental_memo
+                def convert_df(des):
+                    return des.to_csv(index=False).encode('utf-8')
+                csv = convert_df(des)
+                st.download_button(
+                    "Download the rows you selected above.",
+                    csv,
+                    "Dataset Exploration Head",
+                    "text/csv",
+                    key='download-csv'
+                    )
+
             from PIL import Image 
 
             st.markdown("##### Would you like to see the number of unique elements for each variable? ")
