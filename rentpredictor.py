@@ -225,8 +225,8 @@ if check_password():
                     st.markdown("#### Enter number of rows to explore:")
                     rows = st.number_input("", min_value = 1, value = 5)
                     if rows > 0:
-                        head = st.dataframe(df.head(rows))
-                        st.write(head)
+                        st.dataframe(df.head(rows))
+                        
              
             st.markdown("##### Explore the tail end of the dataset")
             #st.experimental_show(df.tail())
