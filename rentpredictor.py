@@ -409,19 +409,19 @@ if check_password():
             sns.set(font_scale=.6)
             
             from fpdf import FPDF
-                import base64
-                from tempfile import NamedTemporaryFile 
-                def create_download_link(val, filename):
-                     b64 = base64.b64encode(val)  # val looks like b'...'
-                     return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
+            import base64
+            from tempfile import NamedTemporaryFile 
+            def create_download_link(val, filename):
+                b64 = base64.b64encode(val)  # val looks like b'...'
+                return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
 
       
-                figs2 = []
-                fig, ax = plt.subplots(figsize = (8, 4.5))
-                ax = sns.boxplot(x = 'smoking_allowed', y = 'price', data = df, palette = "colorblind")
-                sns.set(font_scale = .7)
-                for p in ax.patches:
-                     ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
+            figs2 = []
+            fig, ax = plt.subplots(figsize = (8, 4.5))
+            ax = sns.boxplot(x = 'smoking_allowed', y = 'price', data = df, palette = "colorblind")
+            sns.set(font_scale = .7)
+            for p in ax.patches:
+                ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
                 #ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
                 plt.title("Parking Options", fontsize = 16)
                 plt.tick_params(labelsize = 10)
