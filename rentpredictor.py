@@ -259,7 +259,7 @@ if check_password():
             else:
                 st.write("You selected No.")
             
-        import pypdf2
+        import PyPDF2
         df2 =  pd.read_csv("USAHousing2.csv")
         stats = df2.describe()
         pdf_file = pypdf2.PdfFileWriter()
