@@ -225,7 +225,22 @@ if check_password():
                     st.markdown("#### Enter number of rows to explore:")
                     rows = st.number_input("", min_value = 1, value = 5)
                     if rows > 0:
-                        st.dataframe(df.head(rows))
+                        head = st.dataframe(df.head(rows))
+                        st.write(head)
+                        @st.experimental_memo
+                        def convert_df(head):
+                        return head.to_csv(index=False).encode('utf-8')
+
+
+                        csv = convert_df(head)
+
+                        st.download_button(
+                           "Download rows",
+                           csv,
+                           "Head of data.csv",
+                           "text/csv",
+                           key='download-csv'
+                        )
 
             st.markdown("##### Explore the tail end of the dataset")
             #st.experimental_show(df.tail())
@@ -258,11 +273,7 @@ if check_password():
             else:
                 st.write("You selected No.")
             
-            st.write(df.head(rows))
-            button_text = "Download PDF"
-            download_link = f'<a href="javascript:window.print()" class="button -primary">{button_text}</a>'
-            st.markdown(download_link, unsafe_allow_html= True)
-                
+      
 
         with tab2:
 
