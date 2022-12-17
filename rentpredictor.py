@@ -230,6 +230,18 @@ if check_password():
                         userdf = df.head(rows)
                         st.markdown("# here")
                         st.write(userdf)
+                        @st.experimental_memo
+                        def convert_df(userdf):
+                            return userdf.to_csv(index=False).encode('utf-8')
+                        csv = convert_df(userdf)
+                        st.download_button(
+                                   "Download the rows you selected",
+                                   csv,
+                                   "Dataset exploration",
+                                   "text/csv",
+                                   key='download-csv'
+                                )
+
                         
              
             st.markdown("##### Explore the tail end of the dataset")
@@ -262,19 +274,6 @@ if check_password():
                 st.text(s)
             else:
                 st.write("You selected No.")
-        
-        @st.experimental_memo
-        def convert_df(df):
-            return df.to_csv(index=False).encode('utf-8')
-        csv = convert_df(df)
-        st.download_button(
-                   "Press to Download Rent Prediction Report",
-                   csv,
-                   "Rent Prediction Report.csv",
-                   "text/csv",
-                   key='download-csv'
-                )
-
 
 
 
