@@ -262,7 +262,8 @@ if check_password():
                     key='downloaddes-csv'
                     )
                 stats = df.describe()
-                stats.to_csv('describestats.csv', index = False)
+                if st.button("Download Descriptive Statistics"):
+                    stats.to_csv('describestats.csv', index = False)
 
             from PIL import Image 
 
