@@ -95,7 +95,7 @@ if check_password():
 
     #df= df[(df["long"]< -20) & (df['long'] > -110)] 
 
-    def mainpage():    
+def mainpage():    
         import base64
         def add_bg_from_local(image_file):
             with open(image_file, "rb") as image_file:
@@ -1200,7 +1200,7 @@ with st.spinner('Loading... Please Wait'):
             st.sidebar.info("When all of the factors have been selected press the 'Predict Rent Price' button and wait for the predictor to display the predicted rent price based on the input you gave.")
             st.sidebar.info("If you would like to download your rent prediction as a report then please press the download button.")
             
-    page_names_to_funcs = {
+page_names_to_funcs = {
         "Welcome Page": mainpage,
         "Loading Data": page2,
         "Exploratory Data Analysis": page3,
@@ -1210,9 +1210,8 @@ with st.spinner('Loading... Please Wait'):
         "Rent Predictor": page7
 
         }
-
-    selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
-    page_names_to_funcs[selected_page]()
+selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
+page_names_to_funcs[selected_page]()
 
 
 
