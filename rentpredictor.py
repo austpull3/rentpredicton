@@ -259,19 +259,12 @@ if check_password():
             else:
                 st.write("You selected No.")
             
-        import PyPDF2
-        df2 =  pd.read_csv("USAHousing2.csv")
-        stats = df2.describe()
-        pdf_file = PyPDF2.PdfFileWriter()
-        
-        df_pdf = df2.to_pdf()
-        stats_pdf = stats.to_pdf()
-        
-        pdf_file.addPage(df_pdf)
-        pdf_file.addPage(stats_pdf)
-        
-        with open('output.pdf', 'wb') as f:
-            pdf_file.write(f)
+        from fpdf import FPDF
+               import base64
+               from tempfile import NamedTemporaryFile 
+               def create_download_link(val, filename):
+                    b64 = base64.b64encode(val)  # val looks like b'...'
+                    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
 
 
         with tab2:
