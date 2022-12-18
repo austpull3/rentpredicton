@@ -422,10 +422,17 @@ if check_password():
             sns.set(font_scale = .7)
             for p in ax.patches:
                 ax.annotate('{:.1f}'.format(p.get_height()), (p.get_x()+0.25, p.get_height()+0.01))
-            #ax.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
             plt.title("Parking Options", fontsize = 16)
             plt.tick_params(labelsize = 10)
             #st.pyplot(fig)
+            plt.xlabel(" ")
+            figs2.append(fig)
+            
+            fig, ax2 = plt.subplots(figsize = (8, 4.5))
+            ax2 = sns.boxplot(x = 'beds', y = 'price', data = df, palette = "colorblind")
+            sns.set(font_scale = .7)
+            plt.title("Beds", fontsize = 16)
+            plt.tick_params(labelsize = 10)
             plt.xlabel(" ")
             figs2.append(fig)
 
