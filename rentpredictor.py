@@ -395,6 +395,12 @@ if check_password():
 
             st.markdown("### Electric Vehicle Charge")
             st.bar_chart(df.electric_vehicle_charge.value_counts())
+            
+            st.markdown("### Wheelchair Access")
+            st.bar_chart(df.wheelchair_access.value_counts())
+            
+            st.markdown("### Comes Furnished")
+            st.bar_chart(df.comes_furnished.value_counts())
 
             df=df[df["price"] > 200 ]
             df=df[df["sqfeet"]>= 200]
