@@ -427,7 +427,7 @@ if check_password():
             from tempfile import NamedTemporaryFile 
             def create_download_link(val, filename):
                 b64 = base64.b64encode(val)  # val looks like b'...'
-                return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Barplots</a>'
+                return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download Boxplots</a>'
 
       
             figs2 = []
@@ -462,7 +462,7 @@ if check_password():
             ax4 = sns.boxplot(x = 'parking_options', y = 'price', data = df, palette = "colorblind")
             sns.set(font_scale = .7)
             plt.title("Parking Options", fontsize = 16)
-            plt.tick_params(labelsize = 10)
+            plt.tick_params(labelsize = 8)
             plt.xlabel(" ")
             figs2.append(fig)
             
