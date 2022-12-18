@@ -463,6 +463,7 @@ if check_password():
             sns.set(font_scale = .7)
             plt.title("Parking Options", fontsize = 16)
             plt.tick_params(labelsize = 8)
+            plt.xticks(rotation = 45)
             plt.xlabel(" ")
             figs2.append(fig)
             
