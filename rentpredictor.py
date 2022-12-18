@@ -408,6 +408,20 @@ if check_password():
             df=df[df["baths"]<= 3.5]
             sns.set(font_scale=.6)
             
+            st.markdown("##### To visually explore more features press the button:")
+            if st.button("Display Boxplots"):
+                st.write(sns.boxplot(x = 'smoking_allowed', y = 'price', data = df))
+                st.pyplot()
+                st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
+                st.pyplot()
+                st.write(sns.boxplot(x = 'laundry_options', y = 'price', data = df))
+                st.pyplot()
+                st.write(sns.boxplot(x = 'parking_options', y = 'price', data = df))
+                st.pyplot()
+                st.write(sns.boxplot(x = 'baths', y = 'price', data = df))
+                st.pyplot()
+                
+            
             from fpdf import FPDF
             import base64
             from tempfile import NamedTemporaryFile 
@@ -472,25 +486,6 @@ if check_password():
                 html = create_download_link(pdf.output(dest="S").encode("latin-1"), "Rent Option Boxplots")
                 st.markdown(html, unsafe_allow_html=True)
                 
-            
-            st.markdown("##### To visually explore more features press the button:")
-            if st.button("Display Boxplots"):
-                st.write(sns.boxplot(x = 'smoking_allowed', y = 'price', data = df))
-                st.pyplot()
-                st.write(sns.boxplot(x = 'beds', y = 'price', data = df))
-                st.pyplot()
-                st.write(sns.boxplot(x = 'laundry_options', y = 'price', data = df))
-                st.pyplot()
-                st.write(sns.boxplot(x = 'parking_options', y = 'price', data = df))
-                st.pyplot()
-                st.write(sns.boxplot(x = 'baths', y = 'price', data = df))
-                st.pyplot()
-                
-            
-
-
-
-
     def page4():
         st.markdown("# Handling Missing Data and Outliers")
 
