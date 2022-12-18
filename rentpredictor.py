@@ -464,7 +464,6 @@ if check_password():
             plt.title("Parking Options", fontsize = 16)
             plt.tick_params(labelsize = 10)
             ax4.set_xticklabels(['Carport', 'ATCH Garage', 'Off-Street', 'Det Garage', 'Street', 'None', 'Valet'])
-            plt.xticks(rotation = 45)
             plt.xlabel(" ")
             figs2.append(fig)
             
